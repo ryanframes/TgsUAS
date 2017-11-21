@@ -6,21 +6,20 @@
 package tgsUas;
 
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
- * @author MOZART-PC
+ * @author ZSOFT_DEV
  */
 public class clsConnection {
+    
     public static String serverIP="localhost";
     public static String serverPort="3306";
     public static String serverUser="root";
     public static String serverPass="";
     public static String serverDB="db_tgs_java";
     private static Connection con;
-
+    private clsMainFunction cls = new clsMainFunction();
+    
     public boolean getConnection() {
         if (con == null) {
             try {
@@ -40,7 +39,7 @@ public class clsConnection {
                 con.createStatement().executeUpdate(sql);
             }
         } catch (SQLException ex) {
-            ex.getMessage();
+            cls.showMsg(ex.getMessage(), "setData", 0);;
         }
         finally {
             disconnect();
@@ -66,4 +65,5 @@ public class clsConnection {
             con=null;
         }
     }
+    
 }

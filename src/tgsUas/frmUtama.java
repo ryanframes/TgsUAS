@@ -9,19 +9,22 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.LayoutManager;
+import java.beans.PropertyVetoException;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.*;
+import javax.swing.JInternalFrame;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 
 /**
  *
  * @author MOZART-PC
  */
 public class frmUtama extends javax.swing.JFrame {
-
+    private clsMainFunction cls = new clsMainFunction();
     /**
      * Creates new form frmUtama
      */
@@ -53,23 +56,22 @@ public class frmUtama extends javax.swing.JFrame {
         cmdTransaksi = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         cmdMaster2 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        cmdMaster3 = new javax.swing.JButton();
         topPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         cmdExit = new javax.swing.JButton();
-        bgForm = new javax.swing.JPanel();
-        subMaster = new javax.swing.JPanel();
-        mnuSupplier = new javax.swing.JButton();
-        mnuBarang = new javax.swing.JButton();
+        Desktop = new javax.swing.JDesktopPane();
         subTrans = new javax.swing.JPanel();
         mnuSupplier1 = new javax.swing.JButton();
         mnuBarang1 = new javax.swing.JButton();
+        subMaster = new javax.swing.JPanel();
+        mnuSupplier = new javax.swing.JButton();
+        mnuBarang = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
 
         bg.setBackground(new java.awt.Color(0, 0, 0));
+        bg.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 255, 255)));
         bg.setMaximumSize(new java.awt.Dimension(32767, 100));
         bg.setPreferredSize(new java.awt.Dimension(728, 100));
         bg.setLayout(new java.awt.BorderLayout());
@@ -80,7 +82,7 @@ public class frmUtama extends javax.swing.JFrame {
         scrollSide.setBackground(new java.awt.Color(92, 121, 168));
         scrollSide.setOpaque(false);
 
-        spBg.setBackground(new java.awt.Color(92, 121, 168));
+        spBg.setBackground(new java.awt.Color(44, 62, 80));
         spBg.setPreferredSize(new java.awt.Dimension(161, 400));
 
         pnlLogo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -228,40 +230,6 @@ public class frmUtama extends javax.swing.JFrame {
             .addComponent(cmdMaster2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-
-        cmdMaster3.setBackground(new java.awt.Color(92, 121, 168));
-        cmdMaster3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        cmdMaster3.setText("Connect");
-        cmdMaster3.setContentAreaFilled(false);
-        cmdMaster3.setPreferredSize(new java.awt.Dimension(101, 32));
-        cmdMaster3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cmdMaster3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                cmdMaster3MouseExited(evt);
-            }
-        });
-        cmdMaster3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdMaster3ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(cmdMaster3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cmdMaster3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
         javax.swing.GroupLayout spBgLayout = new javax.swing.GroupLayout(spBg);
         spBg.setLayout(spBgLayout);
         spBgLayout.setHorizontalGroup(
@@ -270,7 +238,6 @@ public class frmUtama extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         spBgLayout.setVerticalGroup(
             spBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,9 +249,7 @@ public class frmUtama extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 172, Short.MAX_VALUE))
+                .addContainerGap(217, Short.MAX_VALUE))
         );
 
         scrollSide.setViewportView(spBg);
@@ -297,9 +262,7 @@ public class frmUtama extends javax.swing.JFrame {
         );
         sidePanelLayout.setVerticalGroup(
             sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sidePanelLayout.createSequentialGroup()
-                .addComponent(scrollSide, javax.swing.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE)
-                .addGap(9, 9, 9))
+            .addComponent(scrollSide, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
         );
 
         bg.add(sidePanel, java.awt.BorderLayout.LINE_START);
@@ -335,7 +298,7 @@ public class frmUtama extends javax.swing.JFrame {
         topPanelLayout.setHorizontalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanelLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 894, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 892, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cmdExit, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -346,73 +309,6 @@ public class frmUtama extends javax.swing.JFrame {
         );
 
         bg.add(topPanel, java.awt.BorderLayout.PAGE_START);
-
-        bgForm.setOpaque(false);
-
-        subMaster.setBackground(new java.awt.Color(92, 121, 168));
-        subMaster.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        subMaster.setAlignmentX(90.0F);
-        subMaster.setAutoscrolls(true);
-        subMaster.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                subMasterMouseExited(evt);
-            }
-        });
-
-        mnuSupplier.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        mnuSupplier.setForeground(new java.awt.Color(255, 255, 255));
-        mnuSupplier.setIcon(new javax.swing.ImageIcon("E:\\Source Code\\Icons_Images\\Image\\Supplier_32px.png")); // NOI18N
-        mnuSupplier.setText("Supplier");
-        mnuSupplier.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
-        mnuSupplier.setContentAreaFilled(false);
-        mnuSupplier.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mnuSupplier.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        mnuSupplier.setIconTextGap(40);
-        mnuSupplier.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        mnuSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                mnuSupplierMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                mnuSupplierMouseExited(evt);
-            }
-        });
-
-        mnuBarang.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        mnuBarang.setForeground(new java.awt.Color(255, 255, 255));
-        mnuBarang.setIcon(new javax.swing.ImageIcon("E:\\Source Code\\Icons_Images\\Image\\Box Open_32.png")); // NOI18N
-        mnuBarang.setText("Barang");
-        mnuBarang.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
-        mnuBarang.setContentAreaFilled(false);
-        mnuBarang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mnuBarang.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        mnuBarang.setIconTextGap(32);
-        mnuBarang.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        mnuBarang.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                mnuBarangMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                mnuBarangMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout subMasterLayout = new javax.swing.GroupLayout(subMaster);
-        subMaster.setLayout(subMasterLayout);
-        subMasterLayout.setHorizontalGroup(
-            subMasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mnuBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-            .addComponent(mnuSupplier, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        subMasterLayout.setVerticalGroup(
-            subMasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(subMasterLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(mnuSupplier)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mnuBarang)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         subTrans.setBackground(new java.awt.Color(92, 121, 168));
         subTrans.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -479,27 +375,101 @@ public class frmUtama extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout bgFormLayout = new javax.swing.GroupLayout(bgForm);
-        bgForm.setLayout(bgFormLayout);
-        bgFormLayout.setHorizontalGroup(
-            bgFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgFormLayout.createSequentialGroup()
+        subMaster.setBackground(new java.awt.Color(92, 121, 168));
+        subMaster.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        subMaster.setAlignmentX(90.0F);
+        subMaster.setAutoscrolls(true);
+        subMaster.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                subMasterMouseExited(evt);
+            }
+        });
+
+        mnuSupplier.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        mnuSupplier.setForeground(new java.awt.Color(255, 255, 255));
+        mnuSupplier.setIcon(new javax.swing.ImageIcon("E:\\Source Code\\Icons_Images\\Image\\Supplier_32px.png")); // NOI18N
+        mnuSupplier.setText("Supplier");
+        mnuSupplier.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
+        mnuSupplier.setContentAreaFilled(false);
+        mnuSupplier.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mnuSupplier.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        mnuSupplier.setIconTextGap(40);
+        mnuSupplier.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        mnuSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                mnuSupplierMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                mnuSupplierMouseExited(evt);
+            }
+        });
+        mnuSupplier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuSupplierActionPerformed(evt);
+            }
+        });
+
+        mnuBarang.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        mnuBarang.setForeground(new java.awt.Color(255, 255, 255));
+        mnuBarang.setIcon(new javax.swing.ImageIcon("E:\\Source Code\\Icons_Images\\Image\\Box Open_32.png")); // NOI18N
+        mnuBarang.setText("Barang");
+        mnuBarang.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
+        mnuBarang.setContentAreaFilled(false);
+        mnuBarang.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mnuBarang.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        mnuBarang.setIconTextGap(32);
+        mnuBarang.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        mnuBarang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                mnuBarangMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                mnuBarangMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout subMasterLayout = new javax.swing.GroupLayout(subMaster);
+        subMaster.setLayout(subMasterLayout);
+        subMasterLayout.setHorizontalGroup(
+            subMasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(mnuBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+            .addComponent(mnuSupplier, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        subMasterLayout.setVerticalGroup(
+            subMasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(subMasterLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(mnuSupplier)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mnuBarang)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        Desktop.setLayer(subTrans, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Desktop.setLayer(subMaster, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
+        Desktop.setLayout(DesktopLayout);
+        DesktopLayout.setHorizontalGroup(
+            DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DesktopLayout.createSequentialGroup()
+                .addGap(1, 1, 1)
                 .addComponent(subMaster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(subTrans, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 375, Short.MAX_VALUE))
+                .addContainerGap(372, Short.MAX_VALUE))
         );
-        bgFormLayout.setVerticalGroup(
-            bgFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgFormLayout.createSequentialGroup()
-                .addGap(162, 162, 162)
-                .addGroup(bgFormLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(subTrans, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(subMaster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(215, Short.MAX_VALUE))
+        DesktopLayout.setVerticalGroup(
+            DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DesktopLayout.createSequentialGroup()
+                .addGap(154, 154, 154)
+                .addGroup(DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(subMaster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(subTrans, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(221, Short.MAX_VALUE))
         );
 
-        bg.add(bgForm, java.awt.BorderLayout.CENTER);
+        bg.add(Desktop, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -547,31 +517,6 @@ public class frmUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmdMenuActionPerformed
 
-    private void mnuSupplierMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuSupplierMouseEntered
-        // TODO add your handling code here:
-        MouseHover(mnuSupplier);
-    }//GEN-LAST:event_mnuSupplierMouseEntered
-
-    private void mnuSupplierMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuSupplierMouseExited
-        // TODO add your handling code here:
-        MouseExit(mnuSupplier);
-    }//GEN-LAST:event_mnuSupplierMouseExited
-
-    private void mnuBarangMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarangMouseEntered
-        // TODO add your handling code here:
-        MouseHover(mnuBarang);
-    }//GEN-LAST:event_mnuBarangMouseEntered
-
-    private void mnuBarangMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarangMouseExited
-        // TODO add your handling code here:
-        MouseExit(mnuBarang);
-    }//GEN-LAST:event_mnuBarangMouseExited
-
-    private void subMasterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subMasterMouseExited
-        // TODO add your handling code here:
-        subMaster.setVisible(false);
-    }//GEN-LAST:event_subMasterMouseExited
-
     private void cmdMasterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMasterActionPerformed
         // TODO add your handling code here:
         subMaster.setVisible(!subMaster.isVisible());
@@ -617,55 +562,61 @@ public class frmUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmdMaster2ActionPerformed
 
-    private void mnuSupplier1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuSupplier1MouseEntered
+    private void subTransMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subTransMouseExited
         // TODO add your handling code here:
-        MouseHover(mnuSupplier1);
-    }//GEN-LAST:event_mnuSupplier1MouseEntered
-
-    private void mnuSupplier1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuSupplier1MouseExited
-        // TODO add your handling code here:
-        MouseExit(mnuSupplier1);
-    }//GEN-LAST:event_mnuSupplier1MouseExited
-
-    private void mnuBarang1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarang1MouseEntered
-        // TODO add your handling code here:
-        MouseHover(mnuBarang1);
-    }//GEN-LAST:event_mnuBarang1MouseEntered
+        subTrans.setVisible(!subTrans.isVisible());
+    }//GEN-LAST:event_subTransMouseExited
 
     private void mnuBarang1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarang1MouseExited
         // TODO add your handling code here:
         MouseExit(mnuBarang1);
     }//GEN-LAST:event_mnuBarang1MouseExited
 
-    private void subTransMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subTransMouseExited
+    private void mnuBarang1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarang1MouseEntered
         // TODO add your handling code here:
-        subTrans.setVisible(!subTrans.isVisible());
-    }//GEN-LAST:event_subTransMouseExited
+        MouseHover(mnuBarang1);
+    }//GEN-LAST:event_mnuBarang1MouseEntered
 
-    private void cmdMaster3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdMaster3MouseEntered
+    private void mnuSupplier1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuSupplier1MouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_cmdMaster3MouseEntered
+        MouseExit(mnuSupplier1);
+    }//GEN-LAST:event_mnuSupplier1MouseExited
 
-    private void cmdMaster3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdMaster3MouseExited
+    private void mnuSupplier1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuSupplier1MouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_cmdMaster3MouseExited
+        MouseHover(mnuSupplier1);
+    }//GEN-LAST:event_mnuSupplier1MouseEntered
 
-    private void cmdMaster3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMaster3ActionPerformed
+    private void subMasterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subMasterMouseExited
         // TODO add your handling code here:
-        clsConnection oConn=new clsConnection();
-        try {
-            if (oConn.getConnection()) {
-                showMsg("Connected !", "Connection", 1);
-                ResultSet rs = oConn.getData("Select user_name from t_user");
-                while (rs.next()) {
-                    showMsg(rs.getString("user_name"), "Info", 1);
-                }
-                oConn.disconnect();
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(frmUtama.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_cmdMaster3ActionPerformed
+        subMaster.setVisible(false);
+    }//GEN-LAST:event_subMasterMouseExited
+
+    private void mnuBarangMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarangMouseExited
+        // TODO add your handling code here:
+        MouseExit(mnuBarang);
+    }//GEN-LAST:event_mnuBarangMouseExited
+
+    private void mnuBarangMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarangMouseEntered
+        // TODO add your handling code here:
+        MouseHover(mnuBarang);
+    }//GEN-LAST:event_mnuBarangMouseEntered
+
+    private void mnuSupplierMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuSupplierMouseExited
+        // TODO add your handling code here:
+        MouseExit(mnuSupplier);
+    }//GEN-LAST:event_mnuSupplierMouseExited
+
+    private void mnuSupplierMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuSupplierMouseEntered
+        // TODO add your handling code here:
+        MouseHover(mnuSupplier);
+    }//GEN-LAST:event_mnuSupplierMouseEntered
+
+    private void mnuSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSupplierActionPerformed
+        // TODO add your handling code here:
+        masterSupplier obj = new masterSupplier();
+        showMenu(obj);
+    }//GEN-LAST:event_mnuSupplierActionPerformed
     
     private static void showMsg(String msg, String msgTitle, int msgType) {
         //0 = Error ; 1=Information ; 2 = Warning; 3 = Question
@@ -680,6 +631,31 @@ public class frmUtama extends javax.swing.JFrame {
         obtn.setOpaque(false);
     }
     
+    public void showMenu(JInternalFrame frm) {
+        boolean loaded=false;
+        JInternalFrame existingFrame[] = Desktop.getAllFrames();
+        for (int i = 1;i<=existingFrame.length;i++) {
+            if (existingFrame[i]==frm) {
+                loaded=true;
+                break;
+            }
+        }
+        if (!loaded) {
+            //Convert JInternalFrame to BasicInternalFrame so the frame can 
+            //be maximized
+            ((BasicInternalFrameUI)frm.getUI()).setNorthPane(null);
+            Desktop.add(frm);
+            frm.setVisible(true);
+            try {
+                frm.setMaximum(true);  //set frame to maximized here
+            } catch (PropertyVetoException e) {
+                cls.showMsg("Show Menu Error !", "showMenu", 2);
+            }
+        }
+        else {
+            Desktop.setSelectedFrame(frm);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -706,6 +682,9 @@ public class frmUtama extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(frmUtama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -722,12 +701,11 @@ public class frmUtama extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane Desktop;
     private javax.swing.JPanel bg;
-    private javax.swing.JPanel bgForm;
     private javax.swing.JButton cmdExit;
     private javax.swing.JButton cmdMaster;
     private javax.swing.JButton cmdMaster2;
-    private javax.swing.JButton cmdMaster3;
     private javax.swing.JButton cmdMenu;
     private javax.swing.JButton cmdTransaksi;
     private javax.swing.JLabel jLabel1;
@@ -735,7 +713,6 @@ public class frmUtama extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JButton mnuBarang;
     private javax.swing.JButton mnuBarang1;
     private javax.swing.JButton mnuSupplier;
