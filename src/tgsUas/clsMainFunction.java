@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
 public class clsMainFunction {
     
     public void showMsg(String msg, String msgTitle, int msgType) {
-        /*0=Error, 1=Info msg, 2 = exclamation*/
+        /*0=Error, 1=Info msg, 2 = exclamation, 3=question*/
         JOptionPane.showMessageDialog(null, msg, msgTitle, msgType);
     }
     

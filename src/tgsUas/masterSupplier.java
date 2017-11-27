@@ -5,12 +5,12 @@
  */
 package tgsUas;
 
-import java.awt.Color;
-import java.awt.event.WindowEvent;
 import java.sql.SQLException;
+import javax.swing.table.TableColumnModel;
+import java.awt.event.KeyEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.table.TableColumnModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -36,10 +36,13 @@ public class masterSupplier extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        bg = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         cmdSave = new javax.swing.JButton();
         cmdClose = new javax.swing.JButton();
+        cmdDelete = new javax.swing.JButton();
+        cmdAdd = new javax.swing.JButton();
+        cmdEdit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtKode = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -55,11 +58,12 @@ public class masterSupplier extends javax.swing.JInternalFrame {
         tblSupplier = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         cmdDisplay = new javax.swing.JButton();
-        txtKontak1 = new javax.swing.JTextField();
+        txtCari = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        jPanel1.setBackground(new java.awt.Color(27, 161, 226));
+        bg.setBackground(new java.awt.Color(27, 161, 226));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(639, 55));
@@ -88,7 +92,7 @@ public class masterSupplier extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(cmdSave);
-        cmdSave.setBounds(10, 10, 87, 27);
+        cmdSave.setBounds(280, 10, 87, 27);
 
         cmdClose.setBackground(new java.awt.Color(255, 255, 255));
         cmdClose.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
@@ -114,7 +118,82 @@ public class masterSupplier extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(cmdClose);
-        cmdClose.setBounds(100, 10, 87, 27);
+        cmdClose.setBounds(370, 10, 87, 27);
+
+        cmdDelete.setBackground(new java.awt.Color(255, 255, 255));
+        cmdDelete.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        cmdDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/remove-icon_16.png"))); // NOI18N
+        cmdDelete.setText("Hapus");
+        cmdDelete.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(51, 51, 51), new java.awt.Color(51, 51, 51)));
+        cmdDelete.setContentAreaFilled(false);
+        cmdDelete.setMaximumSize(new java.awt.Dimension(87, 27));
+        cmdDelete.setMinimumSize(new java.awt.Dimension(87, 27));
+        cmdDelete.setPreferredSize(new java.awt.Dimension(87, 27));
+        cmdDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cmdDeleteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cmdDeleteMouseExited(evt);
+            }
+        });
+        cmdDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdDeleteActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cmdDelete);
+        cmdDelete.setBounds(190, 10, 87, 27);
+
+        cmdAdd.setBackground(new java.awt.Color(255, 255, 255));
+        cmdAdd.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        cmdAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/Plus_16px.png"))); // NOI18N
+        cmdAdd.setText("Tambah");
+        cmdAdd.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(51, 51, 51), new java.awt.Color(51, 51, 51)));
+        cmdAdd.setContentAreaFilled(false);
+        cmdAdd.setMaximumSize(new java.awt.Dimension(87, 27));
+        cmdAdd.setMinimumSize(new java.awt.Dimension(87, 27));
+        cmdAdd.setPreferredSize(new java.awt.Dimension(87, 27));
+        cmdAdd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cmdAddMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cmdAddMouseExited(evt);
+            }
+        });
+        cmdAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdAddActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cmdAdd);
+        cmdAdd.setBounds(10, 10, 87, 27);
+
+        cmdEdit.setBackground(new java.awt.Color(255, 255, 255));
+        cmdEdit.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        cmdEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/Edit Property_16px.png"))); // NOI18N
+        cmdEdit.setText("Ubah");
+        cmdEdit.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(51, 51, 51), new java.awt.Color(51, 51, 51)));
+        cmdEdit.setContentAreaFilled(false);
+        cmdEdit.setMaximumSize(new java.awt.Dimension(87, 27));
+        cmdEdit.setMinimumSize(new java.awt.Dimension(87, 27));
+        cmdEdit.setPreferredSize(new java.awt.Dimension(87, 27));
+        cmdEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cmdEditMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cmdEditMouseExited(evt);
+            }
+        });
+        cmdEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdEditActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cmdEdit);
+        cmdEdit.setBounds(100, 10, 87, 27);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jLabel1.setText("Kode");
@@ -189,48 +268,63 @@ public class masterSupplier extends javax.swing.JInternalFrame {
             }
         });
 
-        txtKontak1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        txtCari.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        txtCari.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCariKeyPressed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel6.setText("Cari berdasarkan Kode / Nama Supplier");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(txtKontak1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cmdDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cmdDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel6)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtKontak1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmdDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
+        bg.setLayout(bgLayout);
+        bgLayout.setHorizontalGroup(
+            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
+            .addGroup(bgLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(bgLayout.createSequentialGroup()
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel4)
                             .addComponent(jLabel3)
                             .addComponent(jLabel5))
                         .addGap(25, 25, 25)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtKode, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -240,27 +334,27 @@ public class masterSupplier extends javax.swing.JInternalFrame {
                 .addContainerGap())
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        bgLayout.setVerticalGroup(
+            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtKode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(txtNoTelp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtKontak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -269,18 +363,18 @@ public class masterSupplier extends javax.swing.JInternalFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -295,16 +389,24 @@ public class masterSupplier extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         if (!allowSave()){ return; }
         try {
-            oConn.setData("insert into t_supplier (supplier_kode, supplier_nama, "
-                + "supplier_alamat, supplier_telp, supplier_kontak) values ("
-                + "'" + txtKode.getText() + "','" + txtNama.getText() + "', "
-                + "'" + txtAlamat.getText() + "', '" + txtNoTelp.getText() + "', "
-                + "'" + txtKontak.getText() + "')");
+            if (txtKode.isEnabled()) {
+                oConn.setData("insert into t_supplier (supplier_kode, supplier_nama, "
+                    + "supplier_alamat, supplier_telp, supplier_kontak) values ("
+                    + "'" + txtKode.getText() + "','" + txtNama.getText() + "', "
+                    + "'" + txtAlamat.getText() + "', '" + txtNoTelp.getText() + "', "
+                    + "'" + txtKontak.getText() + "')");
+            }
+            else {
+                oConn.setData("update t_supplier set supplier_nama = '" + txtNama.getText() + "', "
+                        + "supplier_alamat = '" + txtAlamat.getText() + "', supplier_telp = '" + txtNoTelp.getText() + "', "
+                        + " supplier_kontak = '" + txtKontak.getText() + "' where supplier_kode = '" + txtKode.getText() + "'");
+            }
             clrForm();
             cls.showMsg("Simpan data berhasil !", "Simpan", 1);
         } catch (SQLException ex) {
             cls.showMsg(ex.getSQLState(), "Gagal Simpan", 0);
         }
+        cmdDisplay.doClick();
     }//GEN-LAST:event_cmdSaveActionPerformed
     
     private void clrForm() {
@@ -317,7 +419,7 @@ public class masterSupplier extends javax.swing.JInternalFrame {
     }
     
     private boolean allowSave() {
-        boolean bol=false;
+        boolean bol=false;   
         if (txtKode.getText().equals("")) {
             cls.showMsg("Kode supplier harus di isi.", "Simpan Gagal", 0);
             txtKode.grabFocus();
@@ -346,7 +448,7 @@ public class masterSupplier extends javax.swing.JInternalFrame {
         bol=true;
         return bol;
     }
-        
+    
     private void cmdCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdCloseMouseEntered
         // TODO add your handling code here:
         cls.HoverButton(cmdClose);
@@ -369,10 +471,12 @@ public class masterSupplier extends javax.swing.JInternalFrame {
 
     private void cmdDisplayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdDisplayMouseEntered
         // TODO add your handling code here:
+        cls.HoverButton(cmdDisplay);
     }//GEN-LAST:event_cmdDisplayMouseEntered
 
     private void cmdDisplayMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdDisplayMouseExited
         // TODO add your handling code here:
+        cls.ExitButton(cmdDisplay);
     }//GEN-LAST:event_cmdDisplayMouseExited
 
     private void cmdDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdDisplayActionPerformed
@@ -380,7 +484,8 @@ public class masterSupplier extends javax.swing.JInternalFrame {
             // TODO add your handling code here:
             cls.showTblGrid(tblSupplier, "select ID, supplier_kode as 'Kode',"
                     + "supplier_nama as 'Nama Supplier', supplier_alamat as 'Alamat',"
-                    + "supplier_telp as 'No. Telepon', supplier_kontak as 'Kontak' from t_supplier");
+                    + "supplier_telp as 'No. Telepon', supplier_kontak as 'Kontak' from t_supplier where "
+                    + "supplier_nama like '%" + txtCari.getText() + "%' or supplier_kode like '%" + txtCari.getText() + "%'");
             TableColumnModel colModel=tblSupplier.getColumnModel();
             colModel.removeColumn(colModel.getColumn(0));
             tblSupplier.setEditingColumn(0);
@@ -389,35 +494,126 @@ public class masterSupplier extends javax.swing.JInternalFrame {
             cls.showMsg(ex.getMessage(), "Error", 0);
         }
     }//GEN-LAST:event_cmdDisplayActionPerformed
-
+    
+    private void textMode(boolean bol) {
+        txtKode.setEnabled(bol);
+        txtNama.setEnabled(bol);
+        txtAlamat.setEnabled(bol);
+        txtNoTelp.setEnabled(bol);
+        txtKontak.setEnabled(bol);
+    }
+    
     private void tblSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSupplierMouseClicked
         // TODO add your handling code here:
         int row=tblSupplier.getSelectedRow();
-        for (int i = 1;i<=tblSupplier.getColumnCount();i++) {
-            
-        }
+        txtKode.setText((String)tblSupplier.getValueAt(row, 0));
+        txtNama.setText((String)tblSupplier.getValueAt(row, 1));
+        txtAlamat.setText((String)tblSupplier.getValueAt(row, 2));
+        txtNoTelp.setText((String)tblSupplier.getValueAt(row, 3));
+        txtKontak.setText((String)tblSupplier.getValueAt(row, 4));
+        textMode(false);
     }//GEN-LAST:event_tblSupplierMouseClicked
+
+    private void cmdDeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdDeleteMouseEntered
+        // TODO add your handling code here:
+        cls.HoverButton(cmdDelete);
+    }//GEN-LAST:event_cmdDeleteMouseEntered
+
+    private void cmdDeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdDeleteMouseExited
+        // TODO add your handling code here:
+        cls.ExitButton(cmdDelete);
+    }//GEN-LAST:event_cmdDeleteMouseExited
+
+    private void cmdDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdDeleteActionPerformed
+        // TODO add your handling code here:
+        if (txtKode.isEnabled()) {
+            cls.showMsg("Harap pilih supplier yang akan dihapus !", "Hapus Gagal", 2);
+            txtKode.grabFocus();
+            return;
+        }
+        int btn = JOptionPane.YES_NO_OPTION;
+        int res=JOptionPane.showConfirmDialog(null,"Apakah anda yakin ingin "
+                + "menghapus data terpilih ?","Hapus Data",btn);
+        if (res==JOptionPane.YES_OPTION){
+            try {
+                oConn.setData("delete from t_supplier where supplier_kode = '"
+                        + txtKode.getText() + "'");
+                cmdDisplay.doClick();
+                cls.showMsg("Supplier ["+ txtKode.getText() +" - "+ txtNama.getText() +"] "
+                        + "berhasil di hapus.", "Hapus Berhasil", 0);
+                textMode(true);
+                clrForm();
+            } catch (SQLException ex) {
+                cls.showMsg(ex.getMessage(), "Error", 0);
+            }
+        }
+                
+    }//GEN-LAST:event_cmdDeleteActionPerformed
+
+    private void cmdAddMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdAddMouseEntered
+        // TODO add your handling code here:
+        cls.HoverButton(cmdAdd);
+    }//GEN-LAST:event_cmdAddMouseEntered
+
+    private void cmdAddMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdAddMouseExited
+        // TODO add your handling code here:
+        cls.ExitButton(cmdAdd);
+    }//GEN-LAST:event_cmdAddMouseExited
+
+    private void cmdAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAddActionPerformed
+        // TODO add your handling code here:
+        textMode(true);
+        clrForm();
+    }//GEN-LAST:event_cmdAddActionPerformed
+
+    private void cmdEditMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdEditMouseEntered
+        // TODO add your handling code here:
+        cls.HoverButton(cmdEdit);
+    }//GEN-LAST:event_cmdEditMouseEntered
+
+    private void cmdEditMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdEditMouseExited
+        // TODO add your handling code here:
+        cls.ExitButton(cmdEdit);
+    }//GEN-LAST:event_cmdEditMouseExited
+
+    private void cmdEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEditActionPerformed
+        // TODO add your handling code here:
+        textMode(true);
+        txtKode.setEnabled(false);
+        txtNama.grabFocus();
+    }//GEN-LAST:event_cmdEditActionPerformed
+
+    private void txtCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCariKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER) {
+            cmdDisplay.doClick();
+        }
+    }//GEN-LAST:event_txtCariKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bg;
+    private javax.swing.JButton cmdAdd;
     private javax.swing.JButton cmdClose;
+    private javax.swing.JButton cmdDelete;
     private javax.swing.JButton cmdDisplay;
+    private javax.swing.JButton cmdEdit;
     private javax.swing.JButton cmdSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblSupplier;
     private javax.swing.JTextArea txtAlamat;
+    private javax.swing.JTextField txtCari;
     private javax.swing.JTextField txtKode;
     private javax.swing.JTextField txtKontak;
-    private javax.swing.JTextField txtKontak1;
     private javax.swing.JTextField txtNama;
     private javax.swing.JTextField txtNoTelp;
     // End of variables declaration//GEN-END:variables

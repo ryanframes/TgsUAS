@@ -89,9 +89,9 @@ public class frmUtama extends javax.swing.JFrame {
         pnlLogo.setOpaque(false);
         pnlLogo.setPreferredSize(new java.awt.Dimension(174, 150));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("E:\\Source Code\\Icons_Images\\Image\\RnD-Logo150.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/RnD-Logo150.png"))); // NOI18N
 
-        cmdMenu.setIcon(new javax.swing.ImageIcon("E:\\Source Code\\Icons_Images\\Image\\Menu-16.png")); // NOI18N
+        cmdMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/Menu-16.png"))); // NOI18N
         cmdMenu.setBorderPainted(false);
         cmdMenu.setContentAreaFilled(false);
         cmdMenu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -276,7 +276,7 @@ public class frmUtama extends javax.swing.JFrame {
         jLabel1.setText("..:: Inventory Management System ::..");
         jLabel1.setPreferredSize(new java.awt.Dimension(225, 25));
 
-        cmdExit.setIcon(new javax.swing.ImageIcon("C:\\Users\\MOZART-PC\\Downloads\\close-window16.png")); // NOI18N
+        cmdExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/close-window16.png"))); // NOI18N
         cmdExit.setBorderPainted(false);
         cmdExit.setContentAreaFilled(false);
         cmdExit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -322,7 +322,7 @@ public class frmUtama extends javax.swing.JFrame {
 
         mnuSupplier1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         mnuSupplier1.setForeground(new java.awt.Color(255, 255, 255));
-        mnuSupplier1.setIcon(new javax.swing.ImageIcon("E:\\Source Code\\Icons_Images\\Image\\Delivered_add-32.png")); // NOI18N
+        mnuSupplier1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/Delivered_add-32.png"))); // NOI18N
         mnuSupplier1.setText("Barang Masuk");
         mnuSupplier1.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
         mnuSupplier1.setContentAreaFilled(false);
@@ -341,7 +341,7 @@ public class frmUtama extends javax.swing.JFrame {
 
         mnuBarang1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         mnuBarang1.setForeground(new java.awt.Color(255, 255, 255));
-        mnuBarang1.setIcon(new javax.swing.ImageIcon("E:\\Source Code\\Icons_Images\\Image\\delivered_min_32.png")); // NOI18N
+        mnuBarang1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/delivered_min_32.png"))); // NOI18N
         mnuBarang1.setText("Barang Keluar");
         mnuBarang1.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
         mnuBarang1.setContentAreaFilled(false);
@@ -387,7 +387,7 @@ public class frmUtama extends javax.swing.JFrame {
 
         mnuSupplier.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         mnuSupplier.setForeground(new java.awt.Color(255, 255, 255));
-        mnuSupplier.setIcon(new javax.swing.ImageIcon("E:\\Source Code\\Icons_Images\\Image\\Supplier_32px.png")); // NOI18N
+        mnuSupplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/Supplier_32px.png"))); // NOI18N
         mnuSupplier.setText("Supplier");
         mnuSupplier.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
         mnuSupplier.setContentAreaFilled(false);
@@ -411,7 +411,7 @@ public class frmUtama extends javax.swing.JFrame {
 
         mnuBarang.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         mnuBarang.setForeground(new java.awt.Color(255, 255, 255));
-        mnuBarang.setIcon(new javax.swing.ImageIcon("E:\\Source Code\\Icons_Images\\Image\\Box Open_32.png")); // NOI18N
+        mnuBarang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/Box Open_32.png"))); // NOI18N
         mnuBarang.setText("Barang");
         mnuBarang.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
         mnuBarang.setContentAreaFilled(false);
@@ -560,6 +560,8 @@ public class frmUtama extends javax.swing.JFrame {
 
     private void cmdMaster2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMaster2ActionPerformed
         // TODO add your handling code here:
+        laporanInventory obj = new laporanInventory();
+        showMenu(obj);
     }//GEN-LAST:event_cmdMaster2ActionPerformed
 
     private void subTransMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subTransMouseExited
