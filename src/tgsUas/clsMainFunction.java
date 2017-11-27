@@ -26,19 +26,6 @@ public class clsMainFunction {
         JOptionPane.showMessageDialog(null, msg, msgTitle, msgType);
     }
     
-    public void HoverMenu(JButton obj) {
-        obj.setBackground(new Color(213, 229, 226));
-        obj.setForeground(Color.black);
-        obj.setOpaque(true);
-        obj.getParent().setBackground(Color.green);
-    }
-    
-    public void ExitMenu(JButton obj) {
-        obj.setForeground(Color.white);
-        obj.setOpaque(false);
-        obj.getParent().setBackground(obj.getParent().getParent().getBackground());
-    }
-    
     public void HoverButton(JButton obj) {
         obj.setBackground(new Color(234, 236, 239));
         obj.setOpaque(true);

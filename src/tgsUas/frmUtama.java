@@ -25,6 +25,7 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  */
 public class frmUtama extends javax.swing.JFrame {
     private clsMainFunction cls = new clsMainFunction();
+    private JButton btnActive;
     /**
      * Creates new form frmUtama
      */
@@ -50,22 +51,22 @@ public class frmUtama extends javax.swing.JFrame {
         pnlLogo = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         cmdMenu = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        pnlMaster = new javax.swing.JPanel();
         cmdMaster = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        pnlTrans = new javax.swing.JPanel();
         cmdTransaksi = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        cmdMaster2 = new javax.swing.JButton();
+        pnlLaporan = new javax.swing.JPanel();
+        cmdLaporan = new javax.swing.JButton();
+        subMaster = new javax.swing.JPanel();
+        mnuSupplier = new javax.swing.JButton();
+        mnuBarang = new javax.swing.JButton();
+        subTrans = new javax.swing.JPanel();
+        mnuSupplier1 = new javax.swing.JButton();
+        mnuBarang1 = new javax.swing.JButton();
         topPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         cmdExit = new javax.swing.JButton();
         Desktop = new javax.swing.JDesktopPane();
-        subTrans = new javax.swing.JPanel();
-        mnuSupplier1 = new javax.swing.JButton();
-        mnuBarang1 = new javax.swing.JButton();
-        subMaster = new javax.swing.JPanel();
-        mnuSupplier = new javax.swing.JButton();
-        mnuBarang = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
@@ -77,12 +78,12 @@ public class frmUtama extends javax.swing.JFrame {
         bg.setLayout(new java.awt.BorderLayout());
 
         sidePanel.setBackground(new java.awt.Color(92, 121, 168));
-        sidePanel.setPreferredSize(new java.awt.Dimension(180, 395));
+        sidePanel.setPreferredSize(new java.awt.Dimension(185, 395));
 
         scrollSide.setBackground(new java.awt.Color(92, 121, 168));
         scrollSide.setOpaque(false);
 
-        spBg.setBackground(new java.awt.Color(44, 62, 80));
+        spBg.setBackground(new java.awt.Color(27, 161, 226));
         spBg.setPreferredSize(new java.awt.Dimension(161, 400));
 
         pnlLogo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -115,7 +116,7 @@ public class frmUtama extends javax.swing.JFrame {
             .addGroup(pnlLogoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlLogoLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(cmdMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -128,10 +129,11 @@ public class frmUtama extends javax.swing.JFrame {
                 .addComponent(jLabel2))
         );
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        pnlMaster.setBackground(new java.awt.Color(27, 161, 226));
 
         cmdMaster.setBackground(new java.awt.Color(92, 121, 168));
         cmdMaster.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        cmdMaster.setForeground(new java.awt.Color(255, 255, 255));
         cmdMaster.setText("Master Data");
         cmdMaster.setContentAreaFilled(false);
         cmdMaster.setPreferredSize(new java.awt.Dimension(101, 32));
@@ -149,23 +151,24 @@ public class frmUtama extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlMasterLayout = new javax.swing.GroupLayout(pnlMaster);
+        pnlMaster.setLayout(pnlMasterLayout);
+        pnlMasterLayout.setHorizontalGroup(
+            pnlMasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlMasterLayout.createSequentialGroup()
                 .addGap(5, 5, 5)
                 .addComponent(cmdMaster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlMasterLayout.setVerticalGroup(
+            pnlMasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(cmdMaster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        pnlTrans.setBackground(new java.awt.Color(27, 161, 226));
 
         cmdTransaksi.setBackground(new java.awt.Color(92, 121, 168));
         cmdTransaksi.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        cmdTransaksi.setForeground(new java.awt.Color(255, 255, 255));
         cmdTransaksi.setText("Transaksi");
         cmdTransaksi.setContentAreaFilled(false);
         cmdTransaksi.setPreferredSize(new java.awt.Dimension(101, 32));
@@ -183,196 +186,52 @@ public class frmUtama extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlTransLayout = new javax.swing.GroupLayout(pnlTrans);
+        pnlTrans.setLayout(pnlTransLayout);
+        pnlTransLayout.setHorizontalGroup(
+            pnlTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTransLayout.createSequentialGroup()
                 .addGap(5, 5, 5)
                 .addComponent(cmdTransaksi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlTransLayout.setVerticalGroup(
+            pnlTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(cmdTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        pnlLaporan.setBackground(new java.awt.Color(27, 161, 226));
 
-        cmdMaster2.setBackground(new java.awt.Color(92, 121, 168));
-        cmdMaster2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        cmdMaster2.setText("Laporan");
-        cmdMaster2.setContentAreaFilled(false);
-        cmdMaster2.setPreferredSize(new java.awt.Dimension(101, 32));
-        cmdMaster2.addMouseListener(new java.awt.event.MouseAdapter() {
+        cmdLaporan.setBackground(new java.awt.Color(92, 121, 168));
+        cmdLaporan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        cmdLaporan.setForeground(new java.awt.Color(255, 255, 255));
+        cmdLaporan.setText("Laporan");
+        cmdLaporan.setContentAreaFilled(false);
+        cmdLaporan.setPreferredSize(new java.awt.Dimension(101, 32));
+        cmdLaporan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cmdMaster2MouseEntered(evt);
+                cmdLaporanMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                cmdMaster2MouseExited(evt);
+                cmdLaporanMouseExited(evt);
             }
         });
-        cmdMaster2.addActionListener(new java.awt.event.ActionListener() {
+        cmdLaporan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdMaster2ActionPerformed(evt);
+                cmdLaporanActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlLaporanLayout = new javax.swing.GroupLayout(pnlLaporan);
+        pnlLaporan.setLayout(pnlLaporanLayout);
+        pnlLaporanLayout.setHorizontalGroup(
+            pnlLaporanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlLaporanLayout.createSequentialGroup()
                 .addGap(5, 5, 5)
-                .addComponent(cmdMaster2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(cmdLaporan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cmdMaster2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        javax.swing.GroupLayout spBgLayout = new javax.swing.GroupLayout(spBg);
-        spBg.setLayout(spBgLayout);
-        spBgLayout.setHorizontalGroup(
-            spBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlLogo, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        spBgLayout.setVerticalGroup(
-            spBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(spBgLayout.createSequentialGroup()
-                .addComponent(pnlLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(217, Short.MAX_VALUE))
-        );
-
-        scrollSide.setViewportView(spBg);
-
-        javax.swing.GroupLayout sidePanelLayout = new javax.swing.GroupLayout(sidePanel);
-        sidePanel.setLayout(sidePanelLayout);
-        sidePanelLayout.setHorizontalGroup(
-            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollSide, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        sidePanelLayout.setVerticalGroup(
-            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollSide, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
-        );
-
-        bg.add(sidePanel, java.awt.BorderLayout.LINE_START);
-
-        topPanel.setBackground(new java.awt.Color(93, 239, 132));
-        topPanel.setPreferredSize(new java.awt.Dimension(180, 25));
-        topPanel.setRequestFocusEnabled(false);
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("..:: Inventory Management System ::..");
-        jLabel1.setPreferredSize(new java.awt.Dimension(225, 25));
-
-        cmdExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/close-window16.png"))); // NOI18N
-        cmdExit.setBorderPainted(false);
-        cmdExit.setContentAreaFilled(false);
-        cmdExit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cmdExitMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                cmdExitMouseExited(evt);
-            }
-        });
-        cmdExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdExitActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
-        topPanel.setLayout(topPanelLayout);
-        topPanelLayout.setHorizontalGroup(
-            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(topPanelLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 892, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cmdExit, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        topPanelLayout.setVerticalGroup(
-            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cmdExit, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        bg.add(topPanel, java.awt.BorderLayout.PAGE_START);
-
-        subTrans.setBackground(new java.awt.Color(92, 121, 168));
-        subTrans.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        subTrans.setAlignmentX(90.0F);
-        subTrans.setAutoscrolls(true);
-        subTrans.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                subTransMouseExited(evt);
-            }
-        });
-
-        mnuSupplier1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        mnuSupplier1.setForeground(new java.awt.Color(255, 255, 255));
-        mnuSupplier1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/Delivered_add-32.png"))); // NOI18N
-        mnuSupplier1.setText("Barang Masuk");
-        mnuSupplier1.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
-        mnuSupplier1.setContentAreaFilled(false);
-        mnuSupplier1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mnuSupplier1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        mnuSupplier1.setIconTextGap(40);
-        mnuSupplier1.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        mnuSupplier1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                mnuSupplier1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                mnuSupplier1MouseExited(evt);
-            }
-        });
-
-        mnuBarang1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        mnuBarang1.setForeground(new java.awt.Color(255, 255, 255));
-        mnuBarang1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/delivered_min_32.png"))); // NOI18N
-        mnuBarang1.setText("Barang Keluar");
-        mnuBarang1.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
-        mnuBarang1.setContentAreaFilled(false);
-        mnuBarang1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mnuBarang1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        mnuBarang1.setIconTextGap(40);
-        mnuBarang1.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        mnuBarang1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                mnuBarang1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                mnuBarang1MouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout subTransLayout = new javax.swing.GroupLayout(subTrans);
-        subTrans.setLayout(subTransLayout);
-        subTransLayout.setHorizontalGroup(
-            subTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mnuBarang1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-            .addComponent(mnuSupplier1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        subTransLayout.setVerticalGroup(
-            subTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(subTransLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(mnuSupplier1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mnuBarang1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        pnlLaporanLayout.setVerticalGroup(
+            pnlLaporanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cmdLaporan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         subMaster.setBackground(new java.awt.Color(92, 121, 168));
@@ -432,8 +291,8 @@ public class frmUtama extends javax.swing.JFrame {
         subMaster.setLayout(subMasterLayout);
         subMasterLayout.setHorizontalGroup(
             subMasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mnuBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-            .addComponent(mnuSupplier, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mnuBarang, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mnuSupplier, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
         );
         subMasterLayout.setVerticalGroup(
             subMasterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -445,28 +304,171 @@ public class frmUtama extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Desktop.setLayer(subTrans, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        Desktop.setLayer(subMaster, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        subTrans.setBackground(new java.awt.Color(92, 121, 168));
+        subTrans.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        subTrans.setAlignmentX(90.0F);
+        subTrans.setAutoscrolls(true);
+        subTrans.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                subTransMouseExited(evt);
+            }
+        });
+
+        mnuSupplier1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        mnuSupplier1.setForeground(new java.awt.Color(255, 255, 255));
+        mnuSupplier1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/Delivered_add-32.png"))); // NOI18N
+        mnuSupplier1.setText("Barang Masuk");
+        mnuSupplier1.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
+        mnuSupplier1.setContentAreaFilled(false);
+        mnuSupplier1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mnuSupplier1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        mnuSupplier1.setIconTextGap(40);
+        mnuSupplier1.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        mnuSupplier1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                mnuSupplier1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                mnuSupplier1MouseExited(evt);
+            }
+        });
+
+        mnuBarang1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        mnuBarang1.setForeground(new java.awt.Color(255, 255, 255));
+        mnuBarang1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/delivered_min_32.png"))); // NOI18N
+        mnuBarang1.setText("Barang Keluar");
+        mnuBarang1.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
+        mnuBarang1.setContentAreaFilled(false);
+        mnuBarang1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mnuBarang1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        mnuBarang1.setIconTextGap(40);
+        mnuBarang1.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        mnuBarang1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                mnuBarang1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                mnuBarang1MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout subTransLayout = new javax.swing.GroupLayout(subTrans);
+        subTrans.setLayout(subTransLayout);
+        subTransLayout.setHorizontalGroup(
+            subTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(mnuBarang1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mnuSupplier1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+        );
+        subTransLayout.setVerticalGroup(
+            subTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(subTransLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(mnuSupplier1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mnuBarang1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout spBgLayout = new javax.swing.GroupLayout(spBg);
+        spBg.setLayout(spBgLayout);
+        spBgLayout.setHorizontalGroup(
+            spBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlLogo, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+            .addComponent(pnlMaster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlTrans, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlLaporan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(spBgLayout.createSequentialGroup()
+                .addGroup(spBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(subMaster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(subTrans, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        spBgLayout.setVerticalGroup(
+            spBgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(spBgLayout.createSequentialGroup()
+                .addComponent(pnlLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlMaster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(subMaster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlTrans, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(subTrans, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlLaporan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        scrollSide.setViewportView(spBg);
+
+        javax.swing.GroupLayout sidePanelLayout = new javax.swing.GroupLayout(sidePanel);
+        sidePanel.setLayout(sidePanelLayout);
+        sidePanelLayout.setHorizontalGroup(
+            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(sidePanelLayout.createSequentialGroup()
+                .addComponent(scrollSide, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        sidePanelLayout.setVerticalGroup(
+            sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(scrollSide, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
+        );
+
+        bg.add(sidePanel, java.awt.BorderLayout.LINE_START);
+
+        topPanel.setBackground(new java.awt.Color(93, 239, 132));
+        topPanel.setPreferredSize(new java.awt.Dimension(180, 25));
+        topPanel.setRequestFocusEnabled(false);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("..:: Inventory Management System ::..");
+        jLabel1.setPreferredSize(new java.awt.Dimension(225, 25));
+
+        cmdExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/close-window16.png"))); // NOI18N
+        cmdExit.setBorderPainted(false);
+        cmdExit.setContentAreaFilled(false);
+        cmdExit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cmdExitMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cmdExitMouseExited(evt);
+            }
+        });
+        cmdExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdExitActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
+        topPanel.setLayout(topPanelLayout);
+        topPanelLayout.setHorizontalGroup(
+            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topPanelLayout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 892, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cmdExit, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        topPanelLayout.setVerticalGroup(
+            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(cmdExit, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        bg.add(topPanel, java.awt.BorderLayout.PAGE_START);
 
         javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
         Desktop.setLayout(DesktopLayout);
         DesktopLayout.setHorizontalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DesktopLayout.createSequentialGroup()
-                .addGap(1, 1, 1)
-                .addComponent(subMaster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(subTrans, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(372, Short.MAX_VALUE))
+            .addGap(0, 734, Short.MAX_VALUE)
         );
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DesktopLayout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addGroup(DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(subMaster, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(subTrans, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(221, Short.MAX_VALUE))
+            .addGap(0, 518, Short.MAX_VALUE)
         );
 
         bg.add(Desktop, java.awt.BorderLayout.CENTER);
@@ -479,13 +481,46 @@ public class frmUtama extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+    private void menuActive(JButton obj) {
+        if (btnActive==obj) {
+            btnActive=null;
+            return;
+        }
+        btnActive=obj;
+        if (obj==cmdMaster) {
+            ExitMenu(cmdTransaksi);
+            ExitMenu(cmdLaporan);
+        }
+        if (obj==cmdTransaksi) {
+            ExitMenu(cmdMaster);
+            ExitMenu(cmdLaporan);
+        }
+        if (obj==cmdLaporan) {
+            ExitMenu(cmdTransaksi);
+            ExitMenu(cmdMaster);
+        }
+    }
+    private void HoverMenu(JButton obj) {
+        obj.setBackground(new Color(213, 229, 226));
+        obj.setForeground(Color.black);
+        obj.setOpaque(true);
+        obj.getParent().setBackground(Color.green);
+    }
     
+    private void ExitMenu(JButton obj) {
+        if (btnActive==obj) {
+            return;
+        }
+        obj.setForeground(Color.white);
+        obj.setOpaque(false);
+        obj.getParent().setBackground(obj.getParent().getParent().getBackground());
+    }
     private void cmdExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdExitMouseEntered
         // TODO add your handling code here:
         cmdExit.setOpaque(true);
@@ -501,16 +536,18 @@ public class frmUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_cmdExitActionPerformed
-
+    
     private void cmdMenuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdMenuMouseEntered
         // TODO add your handling code here:
-        cmdMenu.setOpaque(true);
-        cmdMenu.setBackground(new Color(107, 132, 173));
+        //cmdMenu.setOpaque(true);
+        //cmdMenu.setBackground(new Color(107, 132, 173));
+        HoverMenu(cmdMenu);
     }//GEN-LAST:event_cmdMenuMouseEntered
 
     private void cmdMenuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdMenuMouseExited
         // TODO add your handling code here:
-        cmdMenu.setOpaque(false);
+        //cmdMenu.setOpaque(false);
+        ExitMenu(cmdMenu);
     }//GEN-LAST:event_cmdMenuMouseExited
 
     private void cmdMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMenuActionPerformed
@@ -519,54 +556,59 @@ public class frmUtama extends javax.swing.JFrame {
 
     private void cmdMasterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMasterActionPerformed
         // TODO add your handling code here:
+        menuActive(cmdMaster);
         subMaster.setVisible(!subMaster.isVisible());
         subTrans.setVisible(false);
     }//GEN-LAST:event_cmdMasterActionPerformed
 
     private void cmdMasterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdMasterMouseExited
         // TODO add your handling code here:
-        MouseExit(cmdMaster);
+        ExitMenu(cmdMaster);
     }//GEN-LAST:event_cmdMasterMouseExited
 
     private void cmdMasterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdMasterMouseEntered
         // TODO add your handling code here:
-        MouseHover(cmdMaster);
+        HoverMenu(cmdMaster);
     }//GEN-LAST:event_cmdMasterMouseEntered
 
     private void cmdTransaksiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdTransaksiMouseEntered
         // TODO add your handling code here:
-        MouseHover(cmdTransaksi);
+        HoverMenu(cmdTransaksi);
     }//GEN-LAST:event_cmdTransaksiMouseEntered
 
     private void cmdTransaksiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdTransaksiMouseExited
         // TODO add your handling code here:
-        MouseExit(cmdTransaksi);
+        ExitMenu(cmdTransaksi);
     }//GEN-LAST:event_cmdTransaksiMouseExited
 
     private void cmdTransaksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdTransaksiActionPerformed
         // TODO add your handling code here:
+        menuActive(cmdTransaksi);
         subTrans.setLocation(subMaster.getLocation());
         subTrans.setVisible(!subTrans.isVisible());
         subMaster.setVisible(false);
     }//GEN-LAST:event_cmdTransaksiActionPerformed
 
-    private void cmdMaster2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdMaster2MouseEntered
+    private void cmdLaporanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdLaporanMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_cmdMaster2MouseEntered
+        HoverMenu(cmdLaporan);
+    }//GEN-LAST:event_cmdLaporanMouseEntered
 
-    private void cmdMaster2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdMaster2MouseExited
+    private void cmdLaporanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdLaporanMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_cmdMaster2MouseExited
+        ExitMenu(cmdLaporan);
+    }//GEN-LAST:event_cmdLaporanMouseExited
 
-    private void cmdMaster2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMaster2ActionPerformed
+    private void cmdLaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLaporanActionPerformed
         // TODO add your handling code here:
+        menuActive(cmdLaporan);
         laporanInventory obj = new laporanInventory();
         showMenu(obj);
-    }//GEN-LAST:event_cmdMaster2ActionPerformed
+    }//GEN-LAST:event_cmdLaporanActionPerformed
 
     private void subTransMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subTransMouseExited
         // TODO add your handling code here:
-        subTrans.setVisible(!subTrans.isVisible());
+        
     }//GEN-LAST:event_subTransMouseExited
 
     private void mnuBarang1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarang1MouseExited
@@ -591,7 +633,7 @@ public class frmUtama extends javax.swing.JFrame {
 
     private void subMasterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subMasterMouseExited
         // TODO add your handling code here:
-        subMaster.setVisible(false);
+        
     }//GEN-LAST:event_subMasterMouseExited
 
     private void mnuBarangMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarangMouseExited
@@ -604,6 +646,12 @@ public class frmUtama extends javax.swing.JFrame {
         MouseHover(mnuBarang);
     }//GEN-LAST:event_mnuBarangMouseEntered
 
+    private void mnuSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSupplierActionPerformed
+        // TODO add your handling code here:
+        masterSupplier obj = new masterSupplier();
+        showMenu(obj);
+    }//GEN-LAST:event_mnuSupplierActionPerformed
+
     private void mnuSupplierMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuSupplierMouseExited
         // TODO add your handling code here:
         MouseExit(mnuSupplier);
@@ -613,12 +661,6 @@ public class frmUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         MouseHover(mnuSupplier);
     }//GEN-LAST:event_mnuSupplierMouseEntered
-
-    private void mnuSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSupplierActionPerformed
-        // TODO add your handling code here:
-        masterSupplier obj = new masterSupplier();
-        showMenu(obj);
-    }//GEN-LAST:event_mnuSupplierActionPerformed
     
     private static void showMsg(String msg, String msgTitle, int msgType) {
         //0 = Error ; 1=Information ; 2 = Warning; 3 = Question
@@ -636,9 +678,11 @@ public class frmUtama extends javax.swing.JFrame {
     public void showMenu(JInternalFrame frm) {
         boolean loaded=false;
         JInternalFrame existingFrame[] = Desktop.getAllFrames();
-        for (int i = 1;i<=existingFrame.length;i++) {
-            if (existingFrame[i]==frm) {
+        int i=1;
+        for (i=1;i<=existingFrame.length;i++) {
+            if (existingFrame[i-1].getClass()==frm.getClass()) {
                 loaded=true;
+                i=i-1;
                 break;
             }
         }
@@ -655,7 +699,12 @@ public class frmUtama extends javax.swing.JFrame {
             }
         }
         else {
-            Desktop.setSelectedFrame(frm);
+            existingFrame[i].toFront();
+            try {
+                (existingFrame[i]).setSelected(true);
+            } catch (PropertyVetoException ex) {
+                Logger.getLogger(frmUtama.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     /**
@@ -706,20 +755,20 @@ public class frmUtama extends javax.swing.JFrame {
     private javax.swing.JDesktopPane Desktop;
     private javax.swing.JPanel bg;
     private javax.swing.JButton cmdExit;
+    private javax.swing.JButton cmdLaporan;
     private javax.swing.JButton cmdMaster;
-    private javax.swing.JButton cmdMaster2;
     private javax.swing.JButton cmdMenu;
     private javax.swing.JButton cmdTransaksi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JButton mnuBarang;
     private javax.swing.JButton mnuBarang1;
     private javax.swing.JButton mnuSupplier;
     private javax.swing.JButton mnuSupplier1;
+    private javax.swing.JPanel pnlLaporan;
     private javax.swing.JPanel pnlLogo;
+    private javax.swing.JPanel pnlMaster;
+    private javax.swing.JPanel pnlTrans;
     private javax.swing.JScrollPane scrollSide;
     private javax.swing.JPanel sidePanel;
     private javax.swing.JPanel spBg;
