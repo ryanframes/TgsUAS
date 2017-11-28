@@ -35,9 +35,6 @@ public class frmLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        topPanel = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        cmdExit = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
@@ -48,53 +45,12 @@ public class frmLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
+        setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(27, 161, 226));
 
-        topPanel.setBackground(new java.awt.Color(93, 239, 132));
-        topPanel.setPreferredSize(new java.awt.Dimension(180, 25));
-        topPanel.setRequestFocusEnabled(false);
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("..:: Inventory Management System ::..");
-        jLabel4.setPreferredSize(new java.awt.Dimension(225, 25));
-
-        cmdExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/close-window16.png"))); // NOI18N
-        cmdExit.setBorderPainted(false);
-        cmdExit.setContentAreaFilled(false);
-        cmdExit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cmdExitMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                cmdExitMouseExited(evt);
-            }
-        });
-        cmdExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmdExitActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
-        topPanel.setLayout(topPanelLayout);
-        topPanelLayout.setHorizontalGroup(
-            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(topPanelLayout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cmdExit, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4))
-        );
-        topPanelLayout.setVerticalGroup(
-            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(cmdExit, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/RnD-Logo150.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/login_icon_150.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jLabel1.setText("User");
@@ -172,15 +128,13 @@ public class frmLogin extends javax.swing.JFrame {
                     .addComponent(txtPassword)
                     .addComponent(txtUser))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(topPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(topPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
+                        .addGap(52, 52, 52)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -193,9 +147,9 @@ public class frmLogin extends javax.swing.JFrame {
                             .addComponent(cmdLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cmdClose, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
+                        .addGap(26, 26, 26)
                         .addComponent(jLabel2)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -267,22 +221,6 @@ public class frmLogin extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_cmdCloseActionPerformed
 
-    private void cmdExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdExitMouseEntered
-        // TODO add your handling code here:
-        cmdExit.setOpaque(true);
-        cmdExit.setBackground(new Color(166, 237, 185));
-    }//GEN-LAST:event_cmdExitMouseEntered
-
-    private void cmdExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdExitMouseExited
-        // TODO add your handling code here:
-        cmdExit.setOpaque(false);
-    }//GEN-LAST:event_cmdExitMouseExited
-
-    private void cmdExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdExitActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_cmdExitActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -330,14 +268,11 @@ public class frmLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cmdClose;
-    private javax.swing.JButton cmdExit;
     private javax.swing.JButton cmdLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel topPanel;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
