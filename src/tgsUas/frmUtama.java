@@ -286,6 +286,11 @@ public class frmUtama extends javax.swing.JFrame {
                 mnuBarangMouseExited(evt);
             }
         });
+        mnuBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuBarangActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout subMasterLayout = new javax.swing.GroupLayout(subMaster);
         subMaster.setLayout(subMasterLayout);
@@ -602,7 +607,7 @@ public class frmUtama extends javax.swing.JFrame {
     private void cmdLaporanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLaporanActionPerformed
         // TODO add your handling code here:
         menuActive(cmdLaporan);
-        laporanInventory obj = new laporanInventory();
+        laporan_Inventory obj = new laporan_Inventory();
         showMenu(obj);
     }//GEN-LAST:event_cmdLaporanActionPerformed
 
@@ -648,7 +653,7 @@ public class frmUtama extends javax.swing.JFrame {
 
     private void mnuSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSupplierActionPerformed
         // TODO add your handling code here:
-        masterSupplier obj = new masterSupplier();
+        master_Supplier obj = new master_Supplier();
         showMenu(obj);
     }//GEN-LAST:event_mnuSupplierActionPerformed
 
@@ -661,11 +666,13 @@ public class frmUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         MouseHover(mnuSupplier);
     }//GEN-LAST:event_mnuSupplierMouseEntered
+
+    private void mnuBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuBarangActionPerformed
+        // TODO add your handling code here:
+        master_Barang obj = new master_Barang();
+        showMenu(obj);
+    }//GEN-LAST:event_mnuBarangActionPerformed
     
-    private static void showMsg(String msg, String msgTitle, int msgType) {
-        //0 = Error ; 1=Information ; 2 = Warning; 3 = Question
-        JOptionPane.showMessageDialog(null, msg,msgTitle,msgType);
-    }
     private void MouseHover(JButton obtn){
         obtn.setOpaque(true);
         obtn.setBackground(new Color(107, 132, 173));
@@ -740,13 +747,7 @@ public class frmUtama extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                clsConnection oConn = new clsConnection();
-                if (oConn.getConnection()) {
-                    new frmUtama().setVisible(true);   
-                }
-                else {
-                    showMsg("Koneksi ke database gagal !", "Cek Koneksi", 2);
-                }
+                new frmUtama().setVisible(true);   
             }
         });
     }

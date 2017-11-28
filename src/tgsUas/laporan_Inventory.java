@@ -18,13 +18,13 @@ import java.util.logging.Logger;
  *
  * @author MOZART-PC
  */
-public class laporanInventory extends javax.swing.JInternalFrame {
+public class laporan_Inventory extends javax.swing.JInternalFrame {
     clsMainFunction cls = new clsMainFunction();
     clsConnection oConn = new clsConnection();
     /**
      * Creates new form laporanInventory
      */
-    public laporanInventory() {
+    public laporan_Inventory() {
         initComponents();
         Date date=new Date();
         SimpleDateFormat parser = new SimpleDateFormat("yyyy-M-dd");
