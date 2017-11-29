@@ -6,6 +6,7 @@
 package tgsUas;
 
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import java.sql.*;
 import java.util.logging.Level;
@@ -56,9 +57,20 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel1.setText("User");
 
         txtUser.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        txtUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUserKeyPressed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jLabel3.setText("Password");
+
+        txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPasswordKeyPressed(evt);
+            }
+        });
 
         cmdLogin.setBackground(new java.awt.Color(255, 255, 255));
         cmdLogin.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
@@ -220,6 +232,20 @@ public class frmLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_cmdCloseActionPerformed
+
+    private void txtUserKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER) {
+            cmdLogin.doClick();
+        }
+    }//GEN-LAST:event_txtUserKeyPressed
+
+    private void txtPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode()==KeyEvent.VK_ENTER) {
+            cmdLogin.doClick();
+        }
+    }//GEN-LAST:event_txtPasswordKeyPressed
 
     /**
      * @param args the command line arguments

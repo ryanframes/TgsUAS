@@ -337,6 +337,11 @@ public class frmUtama extends javax.swing.JFrame {
                 mnuSupplier1MouseExited(evt);
             }
         });
+        mnuSupplier1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuSupplier1ActionPerformed(evt);
+            }
+        });
 
         mnuBarang1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         mnuBarang1.setForeground(new java.awt.Color(255, 255, 255));
@@ -672,6 +677,12 @@ public class frmUtama extends javax.swing.JFrame {
         master_Barang obj = new master_Barang();
         showMenu(obj);
     }//GEN-LAST:event_mnuBarangActionPerformed
+
+    private void mnuSupplier1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSupplier1ActionPerformed
+        // TODO add your handling code here:
+        transaksi_Masuk frm = new transaksi_Masuk();
+        showMenu(frm);
+    }//GEN-LAST:event_mnuSupplier1ActionPerformed
     
     private void MouseHover(JButton obtn){
         obtn.setOpaque(true);

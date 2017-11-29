@@ -13,6 +13,7 @@ import java.sql.*;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -26,16 +27,37 @@ public class clsMainFunction {
         JOptionPane.showMessageDialog(null, msg, msgTitle, msgType);
     }
     
+    public void HoverButton2(JButton obj) {
+        obj.setBackground(new Color(183, 207, 247));
+    }
+    
+    public void ExitButton2(JButton obj) {
+        obj.setBackground(Color.white);
+    }
     public void HoverButton(JButton obj) {
         obj.setBackground(new Color(234, 236, 239));
         obj.setOpaque(true);
     }
     
     public void ExitButton(JButton obj) {
-        
         obj.setOpaque(false);
     }
     
+    public void showCombo(JComboBox cmb,String sql) {
+        //fill combo box with col index = 1
+        clsConnection oConn = new clsConnection();
+        try {
+            cmb.removeAllItems();
+            cmb.addItem("-Pilih-");
+            ResultSet rs=oConn.getData(sql);
+            while (rs.next()) {
+                cmb.addItem(rs.getString(1));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(clsMainFunction.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+        
     public void showTblGrid(JTable obj, String sql) throws SQLException {
         clsConnection oConn = new clsConnection();
         DefaultTableModel modTbl = new DefaultTableModel();

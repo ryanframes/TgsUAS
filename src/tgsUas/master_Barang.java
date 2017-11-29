@@ -5,6 +5,7 @@
  */
 package tgsUas;
 
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -304,6 +305,7 @@ public class master_Barang extends javax.swing.JInternalFrame {
 
         jLabel7.setBackground(new java.awt.Color(27, 161, 226));
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Master Data Barang");
 
@@ -576,12 +578,12 @@ public class master_Barang extends javax.swing.JInternalFrame {
 
     private void cmdGenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdGenMouseEntered
         // TODO add your handling code here:
-        cls.HoverButton(cmdGen);
+        cls.HoverButton2(cmdGen);
     }//GEN-LAST:event_cmdGenMouseEntered
 
     private void cmdGenMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdGenMouseExited
         // TODO add your handling code here:
-        //cls.ExitButton(cmdGen);
+        cls.ExitButton2(cmdGen);
     }//GEN-LAST:event_cmdGenMouseExited
 
     private void cmdGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGenActionPerformed

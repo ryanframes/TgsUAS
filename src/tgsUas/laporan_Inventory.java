@@ -5,6 +5,7 @@
  */
 package tgsUas;
 
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -50,6 +51,7 @@ public class laporan_Inventory extends javax.swing.JInternalFrame {
         txtSampai = new javax.swing.JFormattedTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         cmdClose = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -59,8 +61,8 @@ public class laporan_Inventory extends javax.swing.JInternalFrame {
 
         bg.setBackground(new java.awt.Color(27, 161, 226));
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setPreferredSize(new java.awt.Dimension(639, 75));
+        jPanel4.setBackground(new java.awt.Color(27, 161, 226));
+        jPanel4.setPreferredSize(new java.awt.Dimension(639, 100));
 
         cmdDisplay.setBackground(new java.awt.Color(255, 255, 255));
         cmdDisplay.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
@@ -71,6 +73,7 @@ public class laporan_Inventory extends javax.swing.JInternalFrame {
         cmdDisplay.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cmdDisplay.setMaximumSize(new java.awt.Dimension(87, 21));
         cmdDisplay.setMinimumSize(new java.awt.Dimension(87, 21));
+        cmdDisplay.setOpaque(true);
         cmdDisplay.setPreferredSize(new java.awt.Dimension(87, 21));
         cmdDisplay.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -86,8 +89,8 @@ public class laporan_Inventory extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel7.setText("Cari Laporan berdasarkan periode. Format tanggal yyyy-mm-dd. Contoh : 2017-01-31");
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel7.setText("Cari Laporan berdasarkan periode. Format tanggal yyyy-mm-dd. Contoh : 2017-01-31");
 
         try {
             txtDari.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-##-##")));
@@ -110,6 +113,12 @@ public class laporan_Inventory extends javax.swing.JInternalFrame {
 
         jLabel3.setText("Sampai");
 
+        jLabel8.setBackground(new java.awt.Color(27, 161, 226));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Laporan Inventory");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -118,22 +127,27 @@ public class laporan_Inventory extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(13, 13, 13)
-                        .addComponent(txtDari, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtSampai, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cmdDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel7))
-                .addContainerGap(360, Short.MAX_VALUE))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(13, 13, 13)
+                                .addComponent(txtDari, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtSampai, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cmdDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel7))
+                        .addGap(0, 350, Short.MAX_VALUE))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
                 .addGap(14, 14, 14)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -215,7 +229,7 @@ public class laporan_Inventory extends javax.swing.JInternalFrame {
             .addGroup(bgLayout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -238,12 +252,12 @@ public class laporan_Inventory extends javax.swing.JInternalFrame {
 
     private void cmdDisplayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdDisplayMouseEntered
         // TODO add your handling code here:
-        cls.HoverButton(cmdDisplay);
+        cmdDisplay.setBackground(new Color(183, 207, 247));
     }//GEN-LAST:event_cmdDisplayMouseEntered
 
     private void cmdDisplayMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdDisplayMouseExited
         // TODO add your handling code here:
-        cls.ExitButton(cmdDisplay);
+        cmdDisplay.setBackground(Color.white);
     }//GEN-LAST:event_cmdDisplayMouseExited
 
     
@@ -293,6 +307,7 @@ public class laporan_Inventory extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
