@@ -28,6 +28,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
     clsConnection oConn = new clsConnection();
     clsMainFunction cls = new clsMainFunction();
     Date date=new Date();
+    boolean newMat=false;
     /**
      * Creates new form transaksi_Masuk
      */
@@ -38,7 +39,6 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
         txtSampai.setText(parser.format(date));
         txtTglDok.setText(parser.format(date));
         displayDoc();
-        displayDet();
         displayTransDet();
     }
 
@@ -118,6 +118,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
         tblDetail = new javax.swing.JTable();
 
         create_Transaksi.setModal(true);
+        create_Transaksi.setResizable(false);
         create_Transaksi.setType(java.awt.Window.Type.POPUP);
 
         bgCreateTrans.setBackground(new java.awt.Color(27, 161, 226));
@@ -311,53 +312,50 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel12))
-                .addGap(44, 44, 44)
+                .addGap(10, 10, 10)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(47, 47, 47)
                         .addComponent(txtKodeBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(6, 6, 6)
                         .addComponent(cmdSearchMat, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txtNamaBarang, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                            .addComponent(txtQty, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cmdProsesMat, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cmdCancelMat, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(366, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(44, 44, 44)
+                        .addComponent(txtNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addGap(58, 58, 58)
+                        .addComponent(txtQty, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(cmdProsesMat, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(cmdCancelMat, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(jLabel6))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtKodeBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(cmdSearchMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtKodeBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmdSearchMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(jLabel11))
                     .addComponent(txtNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addComponent(jLabel12))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtQty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cmdCancelMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmdProsesMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(txtQty, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmdProsesMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmdCancelMat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jPanel1.setBackground(new java.awt.Color(27, 161, 226));
@@ -385,6 +383,11 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
 
         txtNamaSupplier.setEditable(false);
         txtNamaSupplier.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        txtNamaSupplier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNamaSupplierActionPerformed(evt);
+            }
+        });
 
         cmbKodeSupplier.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbKodeSupplier.addItemListener(new java.awt.event.ItemListener() {
@@ -510,7 +513,10 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
                         .addGroup(bgCreateTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel15))
                         .addGap(44, 44, 44)
                         .addGroup(bgCreateTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(bgCreateTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -529,20 +535,15 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(10, 10, 10))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE)
             .addGroup(bgCreateTransLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(bgCreateTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10)
-                    .addGroup(bgCreateTransLayout.createSequentialGroup()
-                        .addComponent(cmdAddMat, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmdEditMat, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmdDelMat, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel15))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(cmdAddMat, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cmdEditMat, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cmdDelMat, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         bgCreateTransLayout.setVerticalGroup(
             bgCreateTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -573,8 +574,8 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
                         .addComponent(cmbKodeSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgCreateTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(txtNamaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNamaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(bgCreateTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
@@ -584,7 +585,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
                     .addComponent(jLabel15)
                     .addComponent(txtDocRef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -613,6 +614,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
         );
 
         cari_Barang.setModal(true);
+        cari_Barang.setResizable(false);
         cari_Barang.setType(java.awt.Window.Type.POPUP);
 
         bgCariBarang.setBackground(new java.awt.Color(27, 161, 226));
@@ -713,8 +715,8 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
                         .addComponent(cmdCariBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cmdPilihBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(txtCariNamaBarang, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
+                        .addGap(0, 16, Short.MAX_VALUE))
+                    .addComponent(txtCariNamaBarang))
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -745,7 +747,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
                 .addGroup(bgCariBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bgCariBarangLayout.setVerticalGroup(
             bgCariBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -761,7 +763,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
         cari_Barang.getContentPane().setLayout(cari_BarangLayout);
         cari_BarangLayout.setHorizontalGroup(
             cari_BarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgCariBarang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(bgCariBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         cari_BarangLayout.setVerticalGroup(
             cari_BarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1053,12 +1055,12 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
 
     private void cmdDisplayMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdDisplayMouseEntered
         // TODO add your handling code here:
-        cmdDisplay.setBackground(new Color(183, 207, 247));
+        cls.HoverButton2(cmdDisplay);
     }//GEN-LAST:event_cmdDisplayMouseEntered
 
     private void cmdDisplayMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdDisplayMouseExited
         // TODO add your handling code here:
-        cls.ExitButton(cmdDisplay);
+        cls.ExitButton2(cmdDisplay);
     }//GEN-LAST:event_cmdDisplayMouseExited
 
     private void cmdDisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdDisplayActionPerformed
@@ -1099,6 +1101,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         cls.showCombo(cmbKodeSupplier,"select supplier_kode from t_supplier");
         clrForm();
+        clrDetail();
         genDoc();
         txtTglDok.grabFocus();
         showTransaksi();
@@ -1116,17 +1119,18 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
 
     private void cmdEditTransActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEditTransActionPerformed
         // TODO add your handling code here:
-        if (tblBarang.getRowCount()==0) {
+        if (tblHeader.getRowCount()==0 || tblHeader.getSelectedRow()<0) {
             return;
         }
-        clrForm();
-        txtID.setText((String) tblBarang.getModel().getValueAt(tblBarang.getSelectedRow(), 0));
-        txtDokNo.setText((String) tblBarang.getModel().getValueAt(tblBarang.getSelectedRow(), 1));
-        txtTglDok.setText((String) tblBarang.getModel().getValueAt(tblBarang.getSelectedRow(), 2));
-        cmbKodeSupplier.setSelectedItem((String) tblBarang.getModel().getValueAt(tblBarang.getSelectedRow(), 3));
-        txtNamaSupplier.setText((String) tblBarang.getModel().getValueAt(tblBarang.getSelectedRow(), 4));
-        txtPenerima.setText((String) tblBarang.getModel().getValueAt(tblBarang.getSelectedRow(), 5));
-        txtDocRef.setText((String) tblBarang.getModel().getValueAt(tblBarang.getSelectedRow(), 6));
+        cls.showCombo(cmbKodeSupplier,"select supplier_kode from t_supplier");
+        clrDetail();
+        txtID.setText(tblHeader.getModel().getValueAt(tblHeader.getSelectedRow(), 0).toString());
+        txtDokNo.setText(tblHeader.getModel().getValueAt(tblHeader.getSelectedRow(), 1).toString());
+        txtTglDok.setText(tblHeader.getModel().getValueAt(tblHeader.getSelectedRow(), 2).toString());
+        cmbKodeSupplier.setSelectedItem(tblHeader.getModel().getValueAt(tblHeader.getSelectedRow(), 3));
+        txtNamaSupplier.setText(tblHeader.getModel().getValueAt(tblHeader.getSelectedRow(), 4).toString());
+        txtPenerima.setText(tblHeader.getModel().getValueAt(tblHeader.getSelectedRow(), 5).toString());
+        txtDocRef.setText(tblHeader.getModel().getValueAt(tblHeader.getSelectedRow(), 6).toString());
         displayTransDet();
         showTransaksi();
     }//GEN-LAST:event_cmdEditTransActionPerformed
@@ -1151,10 +1155,10 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
             try {
                 oConn.setData("delete from t_terima_barang where id = '" +
                         (int) tblHeader.getModel().getValueAt(tblHeader.getSelectedRow(),0) + "'");
-                cmdDisplay.doClick();
                 cls.showMsg("Barang ["+ tblHeader.getValueAt(tblHeader.getSelectedRow(), 0) +" - "
                         + tblHeader.getValueAt(tblHeader.getSelectedRow(), 2) +"] "
-                        + "berhasil di hapus.", "Hapus Berhasil", 0);
+                        + "berhasil di hapus.", "Hapus Berhasil", 1);
+                cmdDisplay.doClick();
             } catch (SQLException ex) {
                 Logger.getLogger(transaksi_Masuk.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1181,26 +1185,30 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
                     + "supplier_kode, tb_penerima, tb_ref_no) values ('" + txtDokNo.getText() + "',"
                     + "'" + txtTglDok.getText() + "', '" + cmbKodeSupplier.getSelectedItem().toString() + "', "
                     + "'" + txtPenerima.getText() + "', '" + txtDocRef.getText() + "')");
-                ResultSet rs=oConn.getData("select max(id) from t_terima_barang where tb_dok = '" + txtDokNo.getText() + "'");
-                txtID.setText(rs.getString(0));
+                ResultSet rs=oConn.getData("select max(id) as id from t_terima_barang where tb_dok = '" + txtDokNo.getText() + "'");
+                if (rs.next()) { txtID.setText(rs.getString("id")); } 
             }
             else {
                 oConn.setData("update t_terima_barang set tb_tgl = '" + txtTglDok.getText() + "', "
                     + "supplier_kode = '" + cmbKodeSupplier.getSelectedItem().toString() + "', "
-                    + "tb_penerima = '" + txtPenerima.getText() + "', tb_ref_no = '" + txtDocRef.getText() + "'"
-                    + " where barang_kode = '" + txtDokNo.getText() + "'");
+                    + "tb_penerima = '" + txtPenerima.getText() + "', tb_ref_no = '" + txtDocRef.getText() + "' "
+                    + "where id = '" + txtID.getText() + "'");
             }
             oConn.setData("delete from t_terima_barang_det where tb_id = " + txtID.getText()); //clear detail
             //save detail
-            for (int i=0;i<=tblBarang.getRowCount();i++) {
-                
+            for (int i=0;i<=tblBarang.getRowCount()-1;i++) {
+                oConn.setData("insert into t_terima_barang_det (tb_id, barang_kode, tb_qty) values "
+                        + "('" + txtID.getText() + "', '" + tblBarang.getValueAt(i, 0) + "', "
+                        + "'" + tblBarang.getValueAt(i, 2) + "')");
             }
             clrForm();
+            genDoc();
             cls.showMsg("Simpan data berhasil !", "Simpan", 1);
         } catch (SQLException ex) {
             cls.showMsg(ex.getSQLState(), "Gagal Simpan", 0);
         }
         cmdDisplay.doClick();
+        create_Transaksi.setVisible(false);
     }//GEN-LAST:event_cmdSaveActionPerformed
 
     private void cmdCloseTransMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdCloseTransMouseEntered
@@ -1223,7 +1231,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
         int row=tblBarang.getSelectedRow();
         txtKodeBarang.setText((String)tblBarang.getValueAt(row, 0));
         txtNamaBarang.setText((String)tblBarang.getValueAt(row, 1));
-        txtQty.setText((String)tblBarang.getValueAt(row, 2));
+        txtQty.setText(tblBarang.getValueAt(row, 2).toString());
         textMode(false);
 //        txtNoRak.setText((String)tblBarang.getValueAt(row, 2));
     }//GEN-LAST:event_tblBarangMouseClicked
@@ -1257,7 +1265,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
 
     private void cmdAddMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdAddMatActionPerformed
         // TODO add your handling code here:
-        clrForm();
+        clrDetail();
         textMode(true);
         txtKodeBarang.grabFocus();
     }//GEN-LAST:event_cmdAddMatActionPerformed
@@ -1274,8 +1282,10 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
 
     private void cmdEditMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdEditMatActionPerformed
         // TODO add your handling code here:
+        if (txtKodeBarang.isEnabled()) { return;}
         tblBarang.setEnabled(false);
         textMode(true);
+        newMat=false;
         txtKodeBarang.grabFocus();
     }//GEN-LAST:event_cmdEditMatActionPerformed
 
@@ -1291,7 +1301,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
 
     private void cmdCancelMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCancelMatActionPerformed
         // TODO add your handling code here:
-        clrForm();
+        clrDetail();
     }//GEN-LAST:event_cmdCancelMatActionPerformed
 
     private void cmdProsesMatMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmdProsesMatMouseEntered
@@ -1307,14 +1317,27 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
     private void cmdProsesMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdProsesMatActionPerformed
         // TODO add your handling code here:
         //kalau kode barang tidak ada
-        if (!txtKodeBarang.getText().equals("") && (!txtQty.getText().equals("") || !txtQty.getText().equals("0"))) {
+        if (!txtKodeBarang.isEnabled()) {
+            cls.showMsg("Harap klik tambah atau ubah untuk menambah / mengganti barang !", "Tambah Barang", 2);
+            return;
+        }
+        if (!txtKodeBarang.getText().equals("") && !txtQty.getText().equals("") && !txtQty.getText().equals("0")) {
             DefaultTableModel model=(DefaultTableModel) tblBarang.getModel();
-            Vector<Object> rowData = new Vector<Object>();
-            rowData.add(txtKodeBarang.getText());
-            rowData.add(txtNamaBarang.getText());
-            rowData.add(txtQty.getText());
-            model.addRow(rowData);
+            if (newMat) {
+                Vector<Object> rowData = new Vector<Object>();
+                rowData.add(txtKodeBarang.getText());
+                rowData.add(txtNamaBarang.getText());
+                rowData.add(txtQty.getText());
+                model.addRow(rowData);
+                
+            }
+            else {
+                model.setValueAt(txtKodeBarang.getText(), tblBarang.getSelectedRow(), 0);
+                model.setValueAt(txtNamaBarang.getText(), tblBarang.getSelectedRow(), 1);
+                model.setValueAt(txtQty.getText(), tblBarang.getSelectedRow(), 2);
+            }
             tblBarang.setModel(model);
+            clrDetail();
         }
     }//GEN-LAST:event_cmdProsesMatActionPerformed
 
@@ -1330,8 +1353,9 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
 
     private void cmdDelMatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdDelMatActionPerformed
         // TODO add your handling code here:
-        if (tblBarang.getRowCount()==0) { return ;}
+        if (tblBarang.getRowCount()==0 || txtKodeBarang.isEnabled()) { return ;}
         ((DefaultTableModel)tblBarang.getModel()).removeRow(tblBarang.getSelectedRow());
+        clrDetail();
     }//GEN-LAST:event_cmdDelMatActionPerformed
 
     private void txtKodeBarangKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtKodeBarangKeyPressed
@@ -1399,6 +1423,10 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
             Logger.getLogger(transaksi_Masuk.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_cmbKodeSupplierItemStateChanged
+
+    private void txtNamaSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaSupplierActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNamaSupplierActionPerformed
     
     void pilih() {
         int i;
@@ -1413,7 +1441,6 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
     private javax.swing.JPanel botPanel;
     private javax.swing.JDialog cari_Barang;
     private javax.swing.JComboBox<String> cmbKodeSupplier;
-    private javax.swing.JButton cmdAdd;
     private javax.swing.JButton cmdAddMat;
     private javax.swing.JButton cmdAddTrans;
     private javax.swing.JButton cmdCancelMat;
@@ -1488,6 +1515,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
             tblHeader.getColumnModel().removeColumn(colHidden); //hide column from table view
             tblHeader.setEditingColumn(0);
             tblHeader.setEditingRow(0);
+            displayDet();
         } catch (SQLException ex) {
             cls.showMsg(ex.getMessage(), "Error", 0);
         }
@@ -1497,7 +1525,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
         try {
             // TODO add your handling code here:
             int tbID;
-            if (tblHeader.getRowCount()==0) { 
+            if (tblHeader.getRowCount()==0 || tblHeader.getSelectedRow()<0) { 
                 tbID=0; 
             } else { 
                 tbID=(int) tblHeader.getModel().getValueAt(tblHeader.getSelectedRow(), 0); 
@@ -1520,13 +1548,15 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
             return false;
         }
         if (txtPenerima.getText().equals("")) {
-            cls.showMsg("Nama Supplier harus di isi !", "Simpan Gagal", 0);
+            cls.showMsg("Nama Penerima harus di isi !", "Simpan Gagal", 0);
+            txtPenerima.grabFocus();
             return false;
         }
         return true;
     }
 
-    private void clrForm() {
+    private void clrDetail() {
+        newMat=true;
         tblBarang.setEnabled(true);
         txtKodeBarang.setText("");
         txtNamaBarang.setText("");
@@ -1584,13 +1614,14 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
             cal.setTime(date);
             String lastNo;
             ResultSet rs = oConn.getData("select ifnull(max(cast(right(tb_dok,8) as signed)),0)+1 as last_no "
-                    + "from t_terima_barang where year(tb_tgl) = '" + date + "'");
+                    + "from t_terima_barang where year(tb_tgl) = '" + cal.get(Calendar.YEAR) + "'");
             if (rs.next()) {
                 lastNo=String.valueOf(cal.get(Calendar.YEAR));
                 lastNo="PB-" + ("00000").substring(rs.getString("last_no").length()) + 
                         rs.getString("last_no") + "/" + lastNo.substring(2);
                 txtDokNo.setText(lastNo);
             }
+            displayTransDet();
         } catch (SQLException ex) {
             Logger.getLogger(transaksi_Masuk.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1618,5 +1649,14 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
         } catch (SQLException ex) {
             Logger.getLogger(transaksi_Masuk.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    private void clrForm() {
+        genDoc();
+        txtID.setText("");
+        cmbKodeSupplier.setSelectedIndex(0);
+        txtPenerima.setText("");
+        txtDocRef.setText("");
+        displayTransDet();
     }
 }
