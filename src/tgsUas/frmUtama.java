@@ -61,8 +61,8 @@ public class frmUtama extends javax.swing.JFrame {
         mnuSupplier = new javax.swing.JButton();
         mnuBarang = new javax.swing.JButton();
         subTrans = new javax.swing.JPanel();
-        mnuSupplier1 = new javax.swing.JButton();
-        mnuBarang1 = new javax.swing.JButton();
+        mnuBarangMasuk = new javax.swing.JButton();
+        mnuBarangKeluar = new javax.swing.JButton();
         topPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         cmdExit = new javax.swing.JButton();
@@ -319,46 +319,51 @@ public class frmUtama extends javax.swing.JFrame {
             }
         });
 
-        mnuSupplier1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        mnuSupplier1.setForeground(new java.awt.Color(255, 255, 255));
-        mnuSupplier1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/Delivered_add-32.png"))); // NOI18N
-        mnuSupplier1.setText("Barang Masuk");
-        mnuSupplier1.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
-        mnuSupplier1.setContentAreaFilled(false);
-        mnuSupplier1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mnuSupplier1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        mnuSupplier1.setIconTextGap(40);
-        mnuSupplier1.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        mnuSupplier1.addMouseListener(new java.awt.event.MouseAdapter() {
+        mnuBarangMasuk.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        mnuBarangMasuk.setForeground(new java.awt.Color(255, 255, 255));
+        mnuBarangMasuk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/Delivered_add-32.png"))); // NOI18N
+        mnuBarangMasuk.setText("Barang Masuk");
+        mnuBarangMasuk.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
+        mnuBarangMasuk.setContentAreaFilled(false);
+        mnuBarangMasuk.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mnuBarangMasuk.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        mnuBarangMasuk.setIconTextGap(40);
+        mnuBarangMasuk.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        mnuBarangMasuk.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                mnuSupplier1MouseEntered(evt);
+                mnuBarangMasukMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                mnuSupplier1MouseExited(evt);
+                mnuBarangMasukMouseExited(evt);
             }
         });
-        mnuSupplier1.addActionListener(new java.awt.event.ActionListener() {
+        mnuBarangMasuk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuSupplier1ActionPerformed(evt);
+                mnuBarangMasukActionPerformed(evt);
             }
         });
 
-        mnuBarang1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        mnuBarang1.setForeground(new java.awt.Color(255, 255, 255));
-        mnuBarang1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/delivered_min_32.png"))); // NOI18N
-        mnuBarang1.setText("Barang Keluar");
-        mnuBarang1.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
-        mnuBarang1.setContentAreaFilled(false);
-        mnuBarang1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mnuBarang1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        mnuBarang1.setIconTextGap(40);
-        mnuBarang1.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        mnuBarang1.addMouseListener(new java.awt.event.MouseAdapter() {
+        mnuBarangKeluar.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        mnuBarangKeluar.setForeground(new java.awt.Color(255, 255, 255));
+        mnuBarangKeluar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tgsUas/Img/delivered_min_32.png"))); // NOI18N
+        mnuBarangKeluar.setText("Barang Keluar");
+        mnuBarangKeluar.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 2, 20));
+        mnuBarangKeluar.setContentAreaFilled(false);
+        mnuBarangKeluar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mnuBarangKeluar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        mnuBarangKeluar.setIconTextGap(40);
+        mnuBarangKeluar.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        mnuBarangKeluar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                mnuBarang1MouseEntered(evt);
+                mnuBarangKeluarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                mnuBarang1MouseExited(evt);
+                mnuBarangKeluarMouseExited(evt);
+            }
+        });
+        mnuBarangKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuBarangKeluarActionPerformed(evt);
             }
         });
 
@@ -366,16 +371,16 @@ public class frmUtama extends javax.swing.JFrame {
         subTrans.setLayout(subTransLayout);
         subTransLayout.setHorizontalGroup(
             subTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mnuBarang1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(mnuSupplier1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+            .addComponent(mnuBarangKeluar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mnuBarangMasuk, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
         );
         subTransLayout.setVerticalGroup(
             subTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(subTransLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mnuSupplier1)
+                .addComponent(mnuBarangMasuk)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mnuBarang1)
+                .addComponent(mnuBarangKeluar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -621,25 +626,25 @@ public class frmUtama extends javax.swing.JFrame {
         
     }//GEN-LAST:event_subTransMouseExited
 
-    private void mnuBarang1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarang1MouseExited
+    private void mnuBarangKeluarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarangKeluarMouseExited
         // TODO add your handling code here:
-        MouseExit(mnuBarang1);
-    }//GEN-LAST:event_mnuBarang1MouseExited
+        MouseExit(mnuBarangKeluar);
+    }//GEN-LAST:event_mnuBarangKeluarMouseExited
 
-    private void mnuBarang1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarang1MouseEntered
+    private void mnuBarangKeluarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarangKeluarMouseEntered
         // TODO add your handling code here:
-        MouseHover(mnuBarang1);
-    }//GEN-LAST:event_mnuBarang1MouseEntered
+        MouseHover(mnuBarangKeluar);
+    }//GEN-LAST:event_mnuBarangKeluarMouseEntered
 
-    private void mnuSupplier1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuSupplier1MouseExited
+    private void mnuBarangMasukMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarangMasukMouseExited
         // TODO add your handling code here:
-        MouseExit(mnuSupplier1);
-    }//GEN-LAST:event_mnuSupplier1MouseExited
+        MouseExit(mnuBarangMasuk);
+    }//GEN-LAST:event_mnuBarangMasukMouseExited
 
-    private void mnuSupplier1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuSupplier1MouseEntered
+    private void mnuBarangMasukMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnuBarangMasukMouseEntered
         // TODO add your handling code here:
-        MouseHover(mnuSupplier1);
-    }//GEN-LAST:event_mnuSupplier1MouseEntered
+        MouseHover(mnuBarangMasuk);
+    }//GEN-LAST:event_mnuBarangMasukMouseEntered
 
     private void subMasterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subMasterMouseExited
         // TODO add your handling code here:
@@ -678,11 +683,17 @@ public class frmUtama extends javax.swing.JFrame {
         showMenu(obj);
     }//GEN-LAST:event_mnuBarangActionPerformed
 
-    private void mnuSupplier1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSupplier1ActionPerformed
+    private void mnuBarangMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuBarangMasukActionPerformed
         // TODO add your handling code here:
         transaksi_Masuk frm = new transaksi_Masuk();
         showMenu(frm);
-    }//GEN-LAST:event_mnuSupplier1ActionPerformed
+    }//GEN-LAST:event_mnuBarangMasukActionPerformed
+
+    private void mnuBarangKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuBarangKeluarActionPerformed
+        // TODO add your handling code here:
+        transaksi_Keluar frm = new transaksi_Keluar();
+        showMenu(frm);
+    }//GEN-LAST:event_mnuBarangKeluarActionPerformed
     
     private void MouseHover(JButton obtn){
         obtn.setOpaque(true);
@@ -774,9 +785,9 @@ public class frmUtama extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton mnuBarang;
-    private javax.swing.JButton mnuBarang1;
+    private javax.swing.JButton mnuBarangKeluar;
+    private javax.swing.JButton mnuBarangMasuk;
     private javax.swing.JButton mnuSupplier;
-    private javax.swing.JButton mnuSupplier1;
     private javax.swing.JPanel pnlLaporan;
     private javax.swing.JPanel pnlLogo;
     private javax.swing.JPanel pnlMaster;

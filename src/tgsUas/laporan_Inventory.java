@@ -267,15 +267,15 @@ public class laporan_Inventory extends javax.swing.JInternalFrame {
             // TODO add your handling code here:
             String str="select barang_kode as 'Kode Barang', barang_nama as 'Nama Barang', "
                     + "no_rak as 'No. Rak', beg as 'Qty Awal', in_qty as 'Qty Masuk', out_qty as 'Qty Keluar', "
-                    + "ifnull(beg,0) + ifnull(in_qty,0) + ifnull(out_qty,0) as 'Qty Akhir' from t_barang brg left join "
+                    + "ifnull(beg,0) + ifnull(in_qty,0) - ifnull(out_qty,0) as 'Qty Akhir' from t_barang brg left join "
                     + "(select barang_kode as kode, sum(inv_qty) as beg from t_inventory "
                     + "where inv_tgl < '"+ txtDari.getText() +" 00:00:00') beg on barang_kode = kode "
                     + "LEFT JOIN (select barang_kode as kode, sum(inv_qty) as in_qty from t_inventory where "
-                    + "inv_tgl between '"+ txtDari.getText() +" 00:00:00' and '"+ txtSampai.getText() +" 00:00:00' "
+                    + "inv_tgl between '"+ txtDari.getText() +" 00:00:00' and '"+ txtSampai.getText() +" 23:59:50' "
                     + "and inv_qty > 0) inv_in on barang_kode = inv_in.kode LEFT JOIN ("
-                    + "select barang_kode as kode, sum(inv_qty) as out_qty from t_inventory where "
-                    + "inv_tgl between '"+ txtDari.getText() +" 00:00:00' and '"+ txtSampai.getText() +" 00:00:00' and inv_qty < 0"
-                    + ") inv_out on barang_kode = inv_in.kode";
+                    + "select barang_kode as kode, sum(inv_qty) * -1 as out_qty from t_inventory where "
+                    + "inv_tgl between '"+ txtDari.getText() +" 00:00:00' and '"+ txtSampai.getText() +" 23:59:50' and inv_qty < 0"
+                    + ") inv_out on barang_kode = inv_out.kode";
             cls.showTblGrid(tblLaporan, str);
             tblLaporan.setEditingColumn(0);
             tblLaporan.setEditingRow(0);

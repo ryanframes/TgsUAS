@@ -16,7 +16,10 @@ import java.util.Date;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
@@ -41,7 +44,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
         displayDoc();
         displayTransDet();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -114,6 +117,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
         cmdDeleteTrans = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblHeader = new javax.swing.JTable();
+        pnlDet = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDetail = new javax.swing.JTable();
 
@@ -843,6 +847,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
             .addGroup(topPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(topPanelLayout.createSequentialGroup()
                         .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(topPanelLayout.createSequentialGroup()
@@ -856,13 +861,11 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cmdDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel7))
-                        .addGap(0, 357, Short.MAX_VALUE))
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         topPanelLayout.setVerticalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topPanelLayout.createSequentialGroup()
+            .addGroup(topPanelLayout.createSequentialGroup()
                 .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
@@ -999,6 +1002,8 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tblHeader);
 
+        pnlDet.setBorder(javax.swing.BorderFactory.createTitledBorder("Detail Penerimaan"));
+
         tblDetail.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -1012,6 +1017,17 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
         ));
         jScrollPane2.setViewportView(tblDetail);
 
+        javax.swing.GroupLayout pnlDetLayout = new javax.swing.GroupLayout(pnlDet);
+        pnlDet.setLayout(pnlDetLayout);
+        pnlDetLayout.setHorizontalGroup(
+            pnlDetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2)
+        );
+        pnlDetLayout.setVerticalGroup(
+            pnlDetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
@@ -1021,8 +1037,8 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jScrollPane2))
+                    .addComponent(pnlDet, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
                 .addContainerGap())
         );
         bgLayout.setVerticalGroup(
@@ -1030,10 +1046,10 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
             .addGroup(bgLayout.createSequentialGroup()
                 .addComponent(topPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnlDet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1155,7 +1171,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
             try {
                 oConn.setData("delete from t_terima_barang where id = '" +
                         (int) tblHeader.getModel().getValueAt(tblHeader.getSelectedRow(),0) + "'");
-                cls.showMsg("Barang ["+ tblHeader.getValueAt(tblHeader.getSelectedRow(), 0) +" - "
+                cls.showMsg("Penerimaan Barang No. ["+ tblHeader.getValueAt(tblHeader.getSelectedRow(), 0) +" - "
                         + tblHeader.getValueAt(tblHeader.getSelectedRow(), 2) +"] "
                         + "berhasil di hapus.", "Hapus Berhasil", 1);
                 cmdDisplay.doClick();
@@ -1194,11 +1210,20 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
                     + "tb_penerima = '" + txtPenerima.getText() + "', tb_ref_no = '" + txtDocRef.getText() + "' "
                     + "where id = '" + txtID.getText() + "'");
             }
+            //delete prev terima barang
             oConn.setData("delete from t_terima_barang_det where tb_id = " + txtID.getText()); //clear detail
+            //delete inventory
+            oConn.setData("delete from t_inventory where inv_ref_no = '" + txtDokNo.getText() + "'");
             //save detail
             for (int i=0;i<=tblBarang.getRowCount()-1;i++) {
+               //save det
                 oConn.setData("insert into t_terima_barang_det (tb_id, barang_kode, tb_qty) values "
                         + "('" + txtID.getText() + "', '" + tblBarang.getValueAt(i, 0) + "', "
+                        + "'" + tblBarang.getValueAt(i, 2) + "')");
+                //save inventory
+                oConn.setData("insert into t_inventory (inv_tgl, inv_ref_no, inv_ket, barang_kode, inv_qty) values"
+                        + "('" + txtTglDok.getText() + "','" + txtDokNo.getText() + "', 'Penerimaan barang dari "
+                        + "supplier " + txtNamaSupplier.getText() + "', '" + tblBarang.getValueAt(i, 0) + "', "
                         + "'" + tblBarang.getValueAt(i, 2) + "')");
             }
             clrForm();
@@ -1228,6 +1253,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
 
     private void tblBarangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBarangMouseClicked
         // TODO add your handling code here:
+        if (!tblBarang.isEnabled()) { return; }
         int row=tblBarang.getSelectedRow();
         txtKodeBarang.setText((String)tblBarang.getValueAt(row, 0));
         txtNamaBarang.setText((String)tblBarang.getValueAt(row, 1));
@@ -1482,6 +1508,7 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JPanel pnlDet;
     private javax.swing.JTable tblBarang;
     private javax.swing.JTable tblCariBarang;
     private javax.swing.JTable tblDetail;
@@ -1525,11 +1552,15 @@ public class transaksi_Masuk extends javax.swing.JInternalFrame {
         try {
             // TODO add your handling code here:
             int tbID;
+            TitledBorder tBorder = BorderFactory.createTitledBorder("");
             if (tblHeader.getRowCount()==0 || tblHeader.getSelectedRow()<0) { 
                 tbID=0; 
+                tBorder.setTitle("Detail Penerimaan Barang");
             } else { 
                 tbID=(int) tblHeader.getModel().getValueAt(tblHeader.getSelectedRow(), 0); 
+                tBorder.setTitle("Detail Penerimaan Barang : " + tblHeader.getModel().getValueAt(tblHeader.getSelectedRow(), 1));
             }
+            pnlDet.setBorder(tBorder);
             String str="select tb.barang_kode as 'Kode Barang', b.barang_nama as 'Nama Barang', "
                     + "tb_qty as 'Qty' from t_terima_barang_det tb join t_barang b on tb.barang_kode = "
             + "b.barang_kode where tb_id = '" + tbID + "' ";

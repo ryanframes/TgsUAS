@@ -471,24 +471,24 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="mnuBarang1" alignment="1" max="32767" attributes="0"/>
-                              <Component id="mnuSupplier1" alignment="1" pref="178" max="32767" attributes="0"/>
+                              <Component id="mnuBarangKeluar" alignment="1" max="32767" attributes="0"/>
+                              <Component id="mnuBarangMasuk" alignment="1" pref="178" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="mnuSupplier1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mnuBarangMasuk" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="mnuBarang1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mnuBarangKeluar" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JButton" name="mnuSupplier1">
+                        <Component class="javax.swing.JButton" name="mnuBarangMasuk">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="11" style="0"/>
@@ -514,12 +514,12 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnuSupplier1MouseEntered"/>
-                            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnuSupplier1MouseExited"/>
-                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuSupplier1ActionPerformed"/>
+                            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnuBarangMasukMouseEntered"/>
+                            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnuBarangMasukMouseExited"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuBarangMasukActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JButton" name="mnuBarang1">
+                        <Component class="javax.swing.JButton" name="mnuBarangKeluar">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI" size="11" style="0"/>
@@ -545,8 +545,9 @@
                             </Property>
                           </Properties>
                           <Events>
-                            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnuBarang1MouseEntered"/>
-                            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnuBarang1MouseExited"/>
+                            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnuBarangKeluarMouseEntered"/>
+                            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mnuBarangKeluarMouseExited"/>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnuBarangKeluarActionPerformed"/>
                           </Events>
                         </Component>
                       </SubComponents>

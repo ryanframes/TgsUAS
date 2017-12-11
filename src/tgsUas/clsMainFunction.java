@@ -60,7 +60,12 @@ public class clsMainFunction {
         
     public void showTblGrid(JTable obj, String sql) throws SQLException {
         clsConnection oConn = new clsConnection();
-        DefaultTableModel modTbl = new DefaultTableModel();
+        DefaultTableModel modTbl = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row,int col) {
+                return false;      
+            }
+        };
         
         ResultSet rs=oConn.getData(sql);
         ResultSetMetaData metaData=rs.getMetaData();
